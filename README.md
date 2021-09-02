@@ -8,7 +8,7 @@
 
 **Is the content relevant?** 
 
-- The website its aimed for the pizza lovers, who want to not just make or take recipies from the cooking book, also they can share their own recipies to the pizza lovers comunity 
+- The website its aimed for the pizza lovers, who want to not just make or take recipies from the cooking book, also they can share their own recipies to the pizza lovers comunity, and the access to a wide group of coocking tools to make it more easy 
 
 **Can we track a catalogue the content in an intuitive way?**
 
