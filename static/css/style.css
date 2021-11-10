@@ -1,0 +1,19 @@
+.histories img{
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto 40px auto;
+}
+
+.histories h2{
+    display: inline;
+    margin: auto;
+}
+
+.images-pizzas{
+    max-height: 350px;
+    overflow: hidden;
+}
