@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
 .histories img{
     width: 100%;
     position: relative;
@@ -8,12 +14,54 @@ h1 {
     margin: 20px auto 40px auto;
 }
 
-.histories h2{
+#registration-tittle{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
     display: inline;
     margin: auto;
 }
 
 .images-pizzas{
-    max-height: 350px;
     overflow: hidden;
 }
+
+.main-box-content{
+    background-color: rgba(0, 0, 0, 0.342);
+    border-radius: 5px;
+    height: 75%;
+    margin-top: 80px;
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+body{
+    background-image: url('https://forneriaoliva.com.br/wp-content/uploads/2016/04/HGRGIW42-min.jpeg');
+    background-size:cover;
+}
+
+.text-color-register{
+    color: rgb(231, 213, 201);
+}
+
+.spacer-for-registration{
+    margin-top: 20px;
+}
+
+.ul-relative-position{
+    left: 0px;
+}
+
+.lebels-registration{
+    font-size: 15px;
+}
+
+.form-control{
+    font-size: 1.2em;
+}
+
+.btn.btn-registration{
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+

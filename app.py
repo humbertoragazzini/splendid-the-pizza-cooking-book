@@ -3,11 +3,12 @@ importing os, flask.
 """
 import os
 from flask import (
-    Flask, flash, 
-    render_template, redirect, 
+    Flask, flash,
+    render_template, redirect,
     request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -26,10 +27,15 @@ decorator and fuction to show tring in the app
 
 
 @app.route("/")
-@app.route("/get_pizza")
-def get_pizza():
+@app.route("/home_page")
+def home_page():
     pizzas = mongo.db.products.find()
-    return render_template("home.html",pizzas = pizzas)
+    return render_template("home.html", pizzas=pizzas)
+
+
+@app.route("/register", methods=["GET","POST"])
+def register():
+    return render_template("registration.html")
 
 
 if __name__ == "__main__":
