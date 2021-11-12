@@ -18,8 +18,8 @@
     <div class="col-2"><i class="fas fa-lock  text-color-register  position-relative top-50 start-50 translate-middle-y"></i></div>
     
     <div class="col-8 form-floating spacer-for-registration">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Your password here" pattern="^[a-zA-Z0-9]{5,15}$">
-      <label style="left:15px;" class="lebels-registration" for="password">Your password here</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Your password here..." pattern="^[a-zA-Z0-9]{5,15}$">
+      <label style="left:15px;" class="lebels-registration" for="password">Your password here...</label>
     </div>
     
     <div class="col-2"></div>
@@ -27,7 +27,11 @@
     <div class="col-8 spacer-for-registration">
       <button type="submit" class="btn btn-success rounded btn-registration">Submit</button>
     </div>
-  
+    
+    <div class="col-8 text-color-register spacer-for-registration">
+      <a href="{{ url_for('login') }}">Already a user? Login and start sharing recipes!</a>
+    </div>
+
   </div>
 </form>
 
