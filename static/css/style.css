@@ -41,6 +41,7 @@ body{
 
 .text-color-register{
     color: rgb(231, 213, 201);
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .spacer-for-registration{

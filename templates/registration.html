@@ -9,7 +9,7 @@
     <div class="col-2"><i class="fas fa-users text-color-register  position-relative top-50 start-50 translate-middle-y"></i></div>
     
     <div class="col-8 form-floating mb-3 spacer-for-registration">
-      <input type="text" class="form-control" id="username" name="username" placeholder="Your user name here">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Your user name here" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
       <label class="lebels-registration" style="left:15px;" for="username">Your user name here...</label>
     </div>
 
@@ -18,7 +18,7 @@
     <div class="col-2"><i class="fas fa-lock  text-color-register  position-relative top-50 start-50 translate-middle-y"></i></div>
     
     <div class="col-8 form-floating spacer-for-registration">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Your password here">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Your password here" pattern="^[a-zA-Z0-9]{5,15}$">
       <label style="left:15px;" class="lebels-registration" for="password">Your password here</label>
     </div>
     
