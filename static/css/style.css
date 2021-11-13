@@ -18,7 +18,6 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     display: inline;
-    margin: auto;
 }
 
 .images-pizzas{
@@ -28,7 +27,6 @@ h1 {
 .main-box-content{
     background-color: rgba(0, 0, 0, 0.342);
     border-radius: 5px;
-    height: 75%;
     margin-top: 80px;
     backdrop-filter: blur(3px);
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
@@ -80,3 +78,24 @@ body{
     margin-top: 40px;
 
 }
+
+.element-margin{
+    margin: 30px auto 30px auto;
+}
+
+.footer-element-margin{
+    margin: 15px auto 15px auto;
+}
+
+.white-icons{
+    color: white;
+}
+
+
+/* display resolution changes */
+
+@media only screen and (min-width: 720px) {
+    #mobile-footer{
+        display: none;
+    }
+  }

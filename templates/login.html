@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
- 
-<h2 class="text-color-register register" id="registration-tittle">Login</h2>
+<div class="col-12 element-margin">
+  <h2 class="text-color-register register" id="registration-tittle">Login</h2>
+</div>
 
-<form method="POST" action="{{ url_for('login') }}">
-  <div class="row justify-content-center">
+<form method="POST" action="{{ url_for('login') }}" class="element-margin">
+  <div class="row justify-content-center element-margin">
     
     <div class="col-2"><i class="fas fa-users text-color-register  position-relative top-50 start-50 translate-middle-y"></i></div>
     
-    <div class="col-8 form-floating mb-3 spacer-for-registration">
+    <div class="col-8 form-floating mb-3 element-margin">
       <input type="text" class="form-control" id="username" name="username" placeholder="User name" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
       <label class="lebels-registration" style="left:15px;" for="username">User Name</label>
     </div>
@@ -17,17 +18,17 @@
     
     <div class="col-2"><i class="fas fa-lock  text-color-register  position-relative top-50 start-50 translate-middle-y"></i></div>
     
-    <div class="col-8 form-floating spacer-for-registration">
+    <div class="col-8 form-floating element-margin">
       <input type="password" class="form-control" id="password" name="password" placeholder="Your password here" pattern="^[a-zA-Z0-9]{5,15}$">
       <label style="left:15px;" class="lebels-registration" for="password">Password</label>
     </div>
     
     <div class="col-2"></div>
     
-    <div class="col-8 spacer-for-registration">
+    <div class="col-8  element-margin">
       <button type="submit" class="btn btn-success rounded btn-registration">Login</button>
     </div>
-    <div class="col-8 text-color-register spacer-for-registration">
+    <div class="col-8 text-color-register spacer-for-registration element-margin">
       <a href="{{ url_for('register') }}">Not a user? Sign Up Now and share your recipes!</a>
     </div>
   
