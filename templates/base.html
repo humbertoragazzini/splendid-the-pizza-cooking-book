@@ -58,7 +58,7 @@
 			{% block content %}
 			{% endblock %}
 			<!--flashed 	-->
-				<div class="row">
+				<div class="row element-margin">
 					{% with messages = get_flashed_messages() %}
 						{% if messages %}
 							{% for message in messages %}
@@ -134,6 +134,7 @@
 	<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/script.js')}}"></script>
 	<script>
 		$("#dateofcopy").text(new Date().getFullYear());
 	</script>
