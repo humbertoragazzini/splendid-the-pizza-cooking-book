@@ -102,8 +102,21 @@ def profile(username):
 
 @app.route("/addrecipe")
 def addrecipe():
-    categories = mongo.db.categories.find()
-    return render_template("addrecipe.html", categories=categories)
+    return render_template("addrecipe.html")
+
+
+@app.route("/addrecipefirst", methods=["GET", "POST"])
+def addrecipefirst():
+    if request.method == "POST":
+
+        number_of_steps = request.form.get("steps")    
+        
+        if number_of_steps != "0":
+            categories = mongo.db.categories.find()
+            return render_template("addrecipe.html", steps=number_of_steps, categories=categories)
+        else:
+            flash("Please, select the number of steps")
+    return render_template("addrecipefirst.html")
 
 
 if __name__ == "__main__":

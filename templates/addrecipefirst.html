@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row profile-main-div">
+    <div class="col-12 spacer-for-registration element-margin">
+        <h2 class="text-color-register register" id="registration-tittle">Adding new recipe (number of steps)</h2>
+    </div>
+    <form class="element-margin" method="POST" action="{{ url_for('addrecipefirst') }}">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8">
+                    <h4 class="text-color-register">Before we continue, please select the amount of steps of the recipe:</h4>
+                    <select class="form-select" name="steps" aria-label="Default select example">
+                        <option selected value="0">Select number of steps</option>
+                        <option value="1">1</option>
+                        <option value="12">2</option>
+                        <option value="123">3</option>
+                        <option value="1234">4</option>
+                        <option value="12345">5</option>
+                        <option value="123456">6</option>
+                        <option value="1234567">7</option>
+                        <option value="12345678">8</option>
+                        <option value="12345679">9</option>
+                    </select>
+                    <div class="col-sm-12 element-margin">
+                        <button type="submit" class="btn btn-success rounded btn-registration">Next <i class="fas fa-forward"></i></button>
+                    </div>
+            </div>
+        </div>
+    </form>
+    
+</div>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}

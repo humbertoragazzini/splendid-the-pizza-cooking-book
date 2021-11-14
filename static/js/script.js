@@ -17,7 +17,6 @@ function addStep(){
     childelement.appendChild(textelement);
     fatherelement.appendChild(childelement);
     console.log(childelement);
-    console.log("hola");
 
 }
 

@@ -20,20 +20,12 @@
                         <option value="{{loop.index}}">{{type.category_name}}</option>
                     {% endfor %}
                 </select>
-                <h4 class="text-color-register element-margin">Necesary kitchen tools:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">List of ingredients:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">Making the dough:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">Making the toping:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">Knead the dough:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">Baking the pizza:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <h4 class="text-color-register element-margin">Cooking instructions:</h4>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                {% for step in steps %}
+                <div class="input-group element-margin">
+                    <span class="input-group-text">Step N{{ step }}</span>
+                    <textarea class="form-control" name="step{{step}}" aria-label="With textarea"></textarea>
+                  </div>
+                {% endfor %}
             </div>
         </div>
     </form>
