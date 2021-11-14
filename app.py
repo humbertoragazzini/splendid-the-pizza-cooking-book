@@ -92,7 +92,7 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     
-    pizzas = mongo.db.recipes.find({"user":session["user"]})
+    pizzas = mongo.db.recipes.find({"user": session["user"]})
 
     if session["user"]:
         return render_template("profile.html", username=username, pizzas=pizzas)
@@ -100,8 +100,47 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/addrecipe")
+@app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
+    if request.method == "POST":
+        existing_recipe_name = mongo.db.recipes.find_one(
+            {"tittle": request.form.get("tittle").lower()})
+
+        if existing_recipe_name:
+            flash("Recipe name already exists")
+        else:
+            tools_igredient_indexer = range(12)
+
+            new_recipe = {
+                "user": session["user"],
+                "tittle": request.form.get("tittle").lower(),
+                "category": request.form.get("category_name"),
+                "description": request.form.get("description"),
+            }
+
+            for n in tools_igredient_indexer:
+                
+                if request.form.get("step"+str(n)):
+                    
+                    new_recipe["step"+str(n)] = request.form.get("step"+str(n))
+
+            for n in tools_igredient_indexer:
+                
+                if request.form.get("ingredient"+str(n)):
+                    
+                    new_recipe["ingredient"+str(n)] = request.form.get("ingredient"+str(n))
+
+            for n in tools_igredient_indexer:
+                
+                if request.form.get("tool"+str(n)):
+                    
+                    new_recipe["tool"+str(n)] = request.form.get("tool"+str(n))
+
+            mongo.db.recipes.insert_one(new_recipe)
+
+        flash("Recipe added successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("addrecipe.html")
 
 
@@ -113,7 +152,7 @@ def addrecipefirst():
         ingredients = request.form.get("ingredients")
         tools = request.form.get("tools")    
         
-        if number_of_steps != "0" and ingredients !="0" and tools !="0":
+        if number_of_steps != "0" and ingredients != "0" and tools != "0":
             categories = mongo.db.categories.find()
             return render_template("addrecipe.html", tools=tools, ingredients=ingredients, steps=number_of_steps, categories=categories)
         else:
