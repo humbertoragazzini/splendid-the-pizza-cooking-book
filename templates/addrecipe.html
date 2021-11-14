@@ -8,24 +8,42 @@
     <form class="element-margin">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-8">
-                <h4 class="text-color-register">Write the recipe name:</h4>
+                <h4 class="text-color-register element-margin">Write the recipe name:</h4>
                 <div class="input-group input-group-sm mb-3 element-margin">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Recipe Name</span>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                 </div>
-                <h4 class="text-color-register">Select the category:</h4>
+                <h4 class="text-color-register element-margin">Select the category:</h4>
                 <select class="form-select element-margin" aria-label="Default select example">
                     <option selected>Select pizza category</option>
                     {% for type in categories %}
                         <option value="{{loop.index}}">{{type.category_name}}</option>
                     {% endfor %}
                 </select>
+                <h4 class="text-color-register element-margin">Step by step write how to prepare the pizza:</h4>
                 {% for step in steps %}
                 <div class="input-group element-margin">
-                    <span class="input-group-text">Step N{{ step }}</span>
+                    <span class="input-group-text">Step N{{ loop.index }}</span>
                     <textarea class="form-control" name="step{{step}}" aria-label="With textarea"></textarea>
-                  </div>
+                </div>
                 {% endfor %}
+                <h4 class="text-color-register element-margin">In the following spaces write the tools used:</h4>
+                {% for tool in tools %}
+                <div class="input-group input-group-sm mb-3 element-margin">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Tool {{ loop.index }}</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                {% endfor %}
+                <h4 class="text-color-register element-margin">Ingredients:</h4>
+                {% for ingredient in ingredients %}
+                <div class="input-group input-group-sm mb-3 element-margin">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ingredient {{ loop.index }}</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                {% endfor %}
+                <div class="col-sm-12 element-margin">
+                    <button type="submit" class="btn btn-success rounded btn-registration">Next <i class="fas fa-forward"></i></button>
+                </div>
             </div>
         </div>
     </form>

@@ -109,11 +109,13 @@ def addrecipe():
 def addrecipefirst():
     if request.method == "POST":
 
-        number_of_steps = request.form.get("steps")    
+        number_of_steps = request.form.get("steps")
+        ingredients = request.form.get("ingredients")
+        tools = request.form.get("tools")    
         
-        if number_of_steps != "0":
+        if number_of_steps != "0" and ingredients !="0" and tools !="0":
             categories = mongo.db.categories.find()
-            return render_template("addrecipe.html", steps=number_of_steps, categories=categories)
+            return render_template("addrecipe.html", tools=tools, ingredients=ingredients, steps=number_of_steps, categories=categories)
         else:
             flash("Please, select the number of steps")
     return render_template("addrecipefirst.html")
