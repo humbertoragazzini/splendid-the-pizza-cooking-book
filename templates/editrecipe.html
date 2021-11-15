@@ -3,9 +3,9 @@
 
 <div class="row profile-main-div">
     <div class="col-12 spacer-for-registration element-margin">
-        <h2 class="text-color-register register" id="registration-tittle">Add new recipe.</h2>
+        <h2 class="text-color-register register" id="registration-tittle">{{ recipe[0]._id }}</h2>
     </div>
-    <form class="element-margin" method="POST" action="{{ url_for('addrecipe') }}">
+    <form class="element-margin" method="POST" action="{{ url_for('editrecipe', recipe_name=recipe[0].tittle) }}">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-8">
                 <h4 class="text-color-register element-margin">Write the recipe name:</h4>
@@ -17,16 +17,16 @@
                 <select class="form-select element-margin" name="category_name" aria-label="Default select example">
                     {% for type in categories %}
                         {% if recipe[0].category == type.category_name %}
-                            <option value="{{loop.index}}" selected>{{type.category_name}}</option>
+                            <option value="{{type.category_name}}" selected>{{type.category_name}}</option>
                         {% else %}
-                            <option value="{{loop.index}}">{{type.category_name}}</option>
+                            <option value="{{type.category_name}}">{{type.category_name}}</option>
                         {% endif %}
                     {% endfor %}
                 </select>
                 <h4 class="text-color-register element-margin">In this space write a descriptions of this amazing pizza recipe:</h4>
                 <div class="input-group element-margin">
                     <span class="input-group-text">Description:</span>
-                    <textarea class="form-control" name="description" aria-label="With textarea" placeholder="{{ recipe[0].description }}"></textarea>
+                    <textarea class="form-control" name="description" aria-label="With textarea" placeholder="{{ recipe[0].description }}">{{ recipe[0].description }}</textarea>
                 </div>
 
                 <h4 class="text-color-register element-margin">Ingredients:</h4>
@@ -35,7 +35,7 @@
                         {% if k[0] == "i": %}
                             <div class="input-group element-margin">
                                 <span class="input-group-text">{{k}}</span>
-                                <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea" placeholder="{{v}}" value="{{v}}"></textarea>
+                                <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -47,7 +47,7 @@
                         {% if k[1] == "o": %}
                             <div class="input-group element-margin">
                                 <span class="input-group-text">{{k}}</span>
-                                <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea" placeholder="{{v}}" value="{{v}}"></textarea>
+                                <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -59,16 +59,17 @@
                         {% if k[0] == "s": %}
                             <div class="input-group element-margin">
                                 <span class="input-group-text">{{k}}</span>
-                                <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea" placeholder="{{v}}" value="{{v}}"></textarea>
+                                <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
                 <div class="col-sm-12 element-margin">
-                    <button type="submit" class="btn btn-success rounded btn-registration"> Save Changes <i class="fas fa-forward"></i></button>
+                    <button type="submit" class="btn btn-success rounded btn-registration">Submit</button>
                 </div>
             </div>
         </div>
+        
     </form>
     
 </div>

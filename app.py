@@ -162,10 +162,48 @@ def addrecipefirst():
 
 @app.route("/editrecipe/<recipe_name>", methods=["GET", "POST"])
 def editrecipe(recipe_name):
+
     recipe = list(mongo.db.recipes.find({"tittle": recipe_name}))
     categories = mongo.db.categories.find()
-    return render_template("editrecipe.html", recipe=recipe, categories=categories)
+    extractvalues = recipe[0]
+    id = extractvalues["_id"]
+    print(id)
+    if request.method == "POST":
 
+        tools_igredient_indexer = range(12)
+
+        new_recipe = {
+            "user": session["user"],
+            "tittle": request.form.get("tittle").lower(),
+            "category": request.form.get("category_name"),
+            "description": request.form.get("description"),
+        }
+
+        for n in tools_igredient_indexer:
+
+            if request.form.get("step"+str(n)):
+
+                new_recipe["step"+str(n)] = request.form.get("step"+str(n))
+
+        for n in tools_igredient_indexer:
+
+            if request.form.get("ingredient"+str(n)):
+
+                new_recipe["ingredient"+str(n)] = request.form.get("ingredient"+str(n))
+
+        for n in tools_igredient_indexer:
+
+            if request.form.get("tool"+str(n)):
+
+                new_recipe["tool"+str(n)] = request.form.get("tool"+str(n))
+
+        mongo.db.recipes.update({"_id": ObjectId(id)}, new_recipe)
+
+        flash("Recipe edited successful!")
+
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("editrecipe.html", recipe=recipe, categories=categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
