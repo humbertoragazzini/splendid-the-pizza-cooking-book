@@ -29,7 +29,7 @@ decorator and fuction to show tring in the app
 @app.route("/")
 @app.route("/home_page")
 def home_page():
-    pizzas = mongo.db.products.find()
+    pizzas = list(mongo.db.recipes.find())
     return render_template("home.html", pizzas=pizzas)
 
 
