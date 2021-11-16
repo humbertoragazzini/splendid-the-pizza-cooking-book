@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="main-tittles">
+  <h2 class="element-margin text-color-register">Welcome to Splendid pizza coocking book</h2>
+</div>
+<div class="row align-items-center">
+  <div class="col-12">
+    <h4 class="text-color-register element-margin">Select the category:</h4>
+  </div>
+  <div class="col-8">
+    <select class="form-select element-margin" name="category_name" aria-label="Default select example">
+      <option selected>Select pizza category</option>
+      {% for type in categories %}
+        <option value="{{type.category_name}}">{{type.category_name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-4">
+    <button class="btn btn-success rounded">Show</button>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-12 blue"><h3>hola</h3></div>
+    <div class="col-md-2 col-12 red"><h3>hola</h3></div>
+    <div class="col-md-6 col-12 green"><h3>hola</h3></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-12 red"><h3>hola</h3></div>
+    <div class="col-md-6 col-12 blue"><h3>hola</h3></div>
+    <div class="col-md-4 col-12 green"><h3>hola</h3></div>
+  </div>
+</div>
+
+  
+
+
+    
+{% endblock %}

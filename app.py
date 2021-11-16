@@ -33,6 +33,14 @@ def home_page():
     return render_template("home.html", pizzas=pizzas)
 
 
+@app.route("/")
+@app.route("/recipies")
+def recipies():
+    pizzas = list(mongo.db.recipes.find())
+    categories = list(mongo.db.categories.find())
+    return render_template("recipies.html", pizzas=pizzas, categories=categories)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -167,7 +175,7 @@ def editrecipe(recipe_name):
     categories = mongo.db.categories.find()
     extractvalues = recipe[0]
     id = extractvalues["_id"]
-    print(id)
+    
     if request.method == "POST":
 
         tools_igredient_indexer = range(12)
