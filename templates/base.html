@@ -15,37 +15,40 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url_for('home_page') }}"><h3 style="font-family: 'Style Script', cursive;">Splendid The Pizza Coocking Book</h3></a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler navbar-toggler-right  nav-bar-button-position" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 	        	<i class="fas fa-bars"></i>
 	      	</button>
-			<div class="collapse navbar-collapse"" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto ul-relative-position">
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
-					</li>
-					{% if not session.user %}
+			<div>
+				<div class="collapse navbar-collapse"" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+							<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('login') }}">Login</a>
-						</li>
-					{% else %}
-						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+							<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
 						</li>
 						<li class="nav-item">
-							<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
+							<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
 						</li>
-					{% endif %}
-				</ul>
+						{% if not session.user %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+							</li>
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+							</li>
+							<li class="nav-item">
+								<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
 			</div>
+			
 		</div>
 	</nav>
 	
@@ -125,8 +128,8 @@
 							</a>
 						</li>
 					</ul>
-					<p class="copyright text-color-register">Copyright &copy; Splendid CB <span id="dateofcopy"></span></p>
 				</div>
+				<p class="copyright text-color-register">Copyright &copy; Splendid CB <span id="dateofcopy"></span></p>
 			</div>
 		</div>
 	</footer>

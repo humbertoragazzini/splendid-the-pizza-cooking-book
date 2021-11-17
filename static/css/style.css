@@ -46,9 +46,6 @@ body{
     margin-top: 20px;
 }
 
-.ul-relative-position{
-    left: 0px;
-}
 
 .lebels-registration{
     font-size: 15px;
@@ -98,12 +95,19 @@ body{
 .text-carrusel{
     font-family: 'Quicksand', sans-serif;
 }
+#mobile-footer{
+    display: none;
+}
 
 /* display resolution changes */
 
-@media only screen and (min-width: 720px) {
+@media only screen and (max-width: 720px) {
     #mobile-footer{
-        display: none;
+        display: block;
+    }
+    .nav-bar-button-position{
+        position: absolute;
+        right: 15px;
     }
   }
 
