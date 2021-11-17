@@ -34,11 +34,11 @@ def home_page():
 
 
 @app.route("/")
-@app.route("/recipies")
-def recipies():
-    pizzas = list(mongo.db.recipes.find())
+@app.route("/recipes")
+def recipes():
+    recipes = list(mongo.db.recipes.find())
     categories = list(mongo.db.categories.find())
-    return render_template("recipies.html", pizzas=pizzas, categories=categories)
+    return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
 @app.route("/register", methods=["GET", "POST"])

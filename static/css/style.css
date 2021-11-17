@@ -107,12 +107,21 @@ body{
     }
   }
 
-    .blue{
+    .tiles-color-pattern{
+    background-color: rgba(179, 255, 0, 0.5);
+}
+    .tiles-color-pattern1{
       background-color: rgba(0, 0, 255, 0.5);
 }
-    .red{
+    .tiles-color-pattern2{
     background-color: rgba(255, 0, 0, 0.5);
 }
-    .green{
-    background-color: rgba(0,255, 0, 0.5);
+    .tiles-color-pattern3{
+    background-color: rgba(0, 204, 255, 0.5);
+}
+    .tiles-color-pattern4{
+    background-color: rgba(255, 145, 0, 0.5);
+}
+    .tiles-color-pattern5{
+    background-color: rgba(255, 0, 212, 0.5);
 }
