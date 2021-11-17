@@ -31,7 +31,7 @@
         <h4 class=" element-margin">{{ recipe.tittle }}</h3>
         <p>{{ recipe.description[0:35] }}...</p>
         <div class="col-sm-12 element-margin">
-          <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-sm btn-success rounded"><strong>View</strong></button></a>
+          <a class="anchors" href="{{ url_for('viewrecipe', _id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><strong>View</strong></button></a>
         </div>
     </div>
     {% endfor%}

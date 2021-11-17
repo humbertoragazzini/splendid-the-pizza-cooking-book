@@ -54,6 +54,14 @@ def recipes():
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
+@app.route("/")
+@app.route("/viewrecipe/<_id>")
+def viewrecipe(_id):
+    print(_id)
+    recipetoview = list(mongo.db.recipes.find({"_id":ObjectId(_id)}))
+    return render_template("viewrecipe.html", recipetoview=recipetoview)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
