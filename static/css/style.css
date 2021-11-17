@@ -108,6 +108,7 @@ body{
     .nav-bar-button-position{
         position: absolute;
         right: 15px;
+        top: 7px;
     }
   }
 
