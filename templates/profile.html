@@ -22,6 +22,7 @@
                             <p>{{recipe.description}}</p>
                         </div>
                         <div class="col-12 align-self-center">
+                            <a href="{{ url_for('viewrecipe',_id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-edit"></i><span> View</span></button></a>
                             <a href="{{ url_for('editrecipe',recipe_name=recipe.tittle) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-edit"></i><span> Edit</span></button></a>
                             <a><button type="button" class="btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></button></a>
                         </div>

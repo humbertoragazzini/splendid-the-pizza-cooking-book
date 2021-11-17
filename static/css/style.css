@@ -132,9 +132,6 @@ body{
     }
   }
 
-  .tile-animated0{
-    /* this is used to refer a class of tile without animation*/
-  }
   .tile-animated1{
     animation-name: animation-tileX;
     animation-duration: 5s;
@@ -192,4 +189,8 @@ body{
 }
     .tiles-color-pattern15{
     background-color: rgba(38, 28, 23, 0.7);
+}
+
+.lists-ingredients-tools{
+    text-align:center;
 }

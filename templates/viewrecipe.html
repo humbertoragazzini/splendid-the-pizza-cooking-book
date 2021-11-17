@@ -2,50 +2,53 @@
 {% block content %}
 
   <div class="main-tittles">
-    <h2 class="element-margin text-color-register">{{ recipetoview.tittle }}</h2>
+    <h2 class="element-margin text-color-register">{{ recipetoview[0].tittle }}</h2>
   </div>
 
-<div class="text-color-register">
-    <h4 class="text-color-register element-margin">Ingredients:</h4>
-  <ul>
-    {% for data in recipetoview %}
-    {% for k,v in data.items() %}
-        {% if k[0] == "i": %}
-            
-                <li>{{v}}</li>
-            
-        {% endif %}
-    {% endfor %}
-{% endfor %}
-  </ul>
+  <div class="row text-color-register">
+    <div class="col-2"></div>
+    <div class="col-md-4  lists-ingredients-tools">
+      <h4 class="text-color-register element-margin">Ingredients:</h4>
+      <ul>
+        {% for data in recipetoview %}
+          {% for k,v in data.items() %}
+            {% if k[0] == "i": %}
+              <li>{{v}}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-2"></div>
+    <div class="col-md-4 lists-ingredients-tools">
+      <h4 class="text-color-register element-margin">Tools:</h4>
+      <ul>
+        {% for data in recipetoview %}
+          {% for k,v in data.items() %}
+            {% if k[1] == "o": %}
+              <li>{{v}}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 
-
-                <h4 class="text-color-register element-margin">Tools:</h4>
-                <ul>
-                  {% for data in recipetoview %}
-                  {% for k,v in data.items() %}
-                      {% if k[1] == "o": %}
-                              <li>{{v}}</li>
-                        
-                      {% endif %}
-                  {% endfor %}
-              {% endfor %}
-                </ul>
-
-
-                <h4 class="text-color-register element-margin">Step by step write here how to prepare the pizza:</h4>
-                <ul>
-                  {% for data in recipetoview %}
-                  {% for k,v in data.items() %}
-                      {% if k[0] == "s": %}
-
-                              <li>{{v}}</li>
-                     
-                      {% endif %}
-                  {% endfor %}
-              {% endfor %}
-                </ul>
-              </div>
-
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-md-10">
+      <h4 class="text-color-register element-margin ">Step by step write here how to prepare the pizza:</h4>
+      <ul class="lists-ingredients-tools text-color-register">
+        {% for data in recipetoview %}
+          {% for k,v in data.items() %}
+            {% if k[0] == "s": %}
+              <li>{{v}}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
