@@ -107,6 +107,44 @@ body{
     }
   }
 
+  
+
+
+ @keyframes animation-tileY {
+    from {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(365deg);
+        transform: rotateY(365deg);
+    }
+  }
+  
+@keyframes animation-tileX {
+  from {
+      -webkit-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+    }
+    to {
+        -webkit-transform: rotateX(365deg);
+        transform: rotateX(365deg);
+    }
+  }
+
+  .tile-animated0{
+    /* this is used to refer a class of tile without animation*/
+  }
+  .tile-animated1{
+    animation-name: animation-tileX;
+    animation-duration: 5s;
+  }
+
+  .tile-animated2{
+    animation-name: animation-tileY;
+    animation-duration: 5s;
+  }
+
     .tiles-color-pattern{
     background-color: rgba(10, 65, 88, 0.5);
 }

@@ -34,10 +34,23 @@ def home_page():
 
 
 @app.route("/")
-@app.route("/recipes")
+@app.route("/recipes", methods=["GET", "POST"])
 def recipes():
     recipes = list(mongo.db.recipes.find())
     categories = list(mongo.db.categories.find())
+
+    if request.method == "POST":
+        option = request.form.get("category_name")
+
+        if option == "all":
+            recipes = list(mongo.db.recipes.find())
+            return render_template("recipes.html", recipes=recipes, categories=categories)
+        
+        else:
+            recipes = list(mongo.db.recipes.find(
+                {"category": option }))
+            return render_template("recipes.html", recipes=recipes, categories=categories)
+
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
