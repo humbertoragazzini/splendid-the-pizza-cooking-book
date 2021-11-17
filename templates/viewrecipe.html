@@ -13,7 +13,7 @@
         {% for data in recipetoview %}
           {% for k,v in data.items() %}
             {% if k[0] == "i": %}
-              <li>{{v}}</li>
+              <li class="li-ingredients-tools">{{v}}</li>
             {% endif %}
           {% endfor %}
         {% endfor %}
@@ -26,7 +26,7 @@
         {% for data in recipetoview %}
           {% for k,v in data.items() %}
             {% if k[1] == "o": %}
-              <li>{{v}}</li>
+              <li class="li-ingredients-tools">{{v}}</li>
             {% endif %}
           {% endfor %}
         {% endfor %}

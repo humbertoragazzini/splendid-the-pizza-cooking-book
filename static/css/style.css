@@ -197,7 +197,11 @@ body{
 }
 
 .lists-ingredients-tools{
-    text-align:center;
+    text-align:left;
+}
+
+li.li-ingredients-tools{
+    margin-left: 65px;
 }
 
 .family-image-li{
