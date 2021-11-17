@@ -194,3 +194,18 @@ body{
 .lists-ingredients-tools{
     text-align:center;
 }
+
+.family-image-li{
+    display: inline-block;
+    width: 125px;
+}
+
+img{
+    width: 120px;
+    height: 120px;
+}
+
+.span-about-photos{
+    font-size: 15px;
+    font-style: italic;
+}

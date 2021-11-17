@@ -62,6 +62,12 @@ def viewrecipe(_id):
     return render_template("viewrecipe.html", recipetoview=recipetoview)
 
 
+@app.route("/")
+@app.route("/aboutus")
+def aboutus():
+    return render_template("aboutus.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
