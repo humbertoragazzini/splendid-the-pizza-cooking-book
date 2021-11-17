@@ -108,20 +108,50 @@ body{
   }
 
     .tiles-color-pattern{
-    background-color: rgba(179, 255, 0, 0.5);
+    background-color: rgba(10, 65, 88, 0.5);
 }
     .tiles-color-pattern1{
-      background-color: rgba(0, 0, 255, 0.5);
+      background-color: rgba(75, 131, 120, 0.7);
 }
     .tiles-color-pattern2{
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 150, 54, 0.7);
 }
     .tiles-color-pattern3{
-    background-color: rgba(0, 204, 255, 0.5);
+    background-color: rgba(228, 215, 208, 0.7);
 }
     .tiles-color-pattern4{
-    background-color: rgba(255, 145, 0, 0.5);
+    background-color: rgba(218, 102, 50, 0.7);
 }
     .tiles-color-pattern5{
-    background-color: rgba(255, 0, 212, 0.5);
+      background-color: rgba(151, 135, 93, 0.7);
+}
+    .tiles-color-pattern6{
+    background-color: rgba(230, 222, 211, 0.7);
+}
+    .tiles-color-pattern7{
+    background-color: rgba(155, 142, 139, 0.7);
+}
+    .tiles-color-pattern8{
+    background-color: rgba(89, 117, 37, 0.7);
+}
+    .tiles-color-pattern9{
+      background-color: rgba(236, 211, 147, 0.7);
+}
+    .tiles-color-pattern10{
+    background-color: rgba(239, 240, 234, 0.7);
+}
+    .tiles-color-pattern11{
+    background-color: rgba(165, 51, 29, 0.7);
+}
+    .tiles-color-pattern12{
+    background-color: rgba(127, 68, 43, 0.7);
+}
+    .tiles-color-pattern13{
+      background-color: rgba(145, 150, 102, 0.7);
+}
+    .tiles-color-pattern14{
+    background-color: rgba(165, 58, 18, 0.7);
+}
+    .tiles-color-pattern15{
+    background-color: rgba(38, 28, 23, 0.7);
 }

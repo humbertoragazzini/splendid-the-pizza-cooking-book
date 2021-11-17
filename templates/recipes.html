@@ -25,8 +25,8 @@
 <div class="container">
   <div class="row">
     {% for recipe in recipes %}
-    <div class="col-md-4 col-12 tiles-color-pattern{{range(1,5)|random}} text-color-register">
-      <a>
+    <div class="col-md-4 col-12 tiles-color-pattern{{range(1,15)|random}} text-color-register">
+      <a href="{{ url_for('home_page') }}">
         <h4 class=" element-margin">{{ recipe.tittle }}</h3>
         <p>{{ recipe.description[0:35] }}...</p>
       </a>
