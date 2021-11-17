@@ -101,7 +101,7 @@ body{
 
 /* display resolution changes */
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 960px) {
     #mobile-footer{
         display: block;
     }
