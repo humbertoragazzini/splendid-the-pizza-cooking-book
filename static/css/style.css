@@ -283,6 +283,7 @@ li.li-ingredients-tools{
 
 .toast{
     position: relative;
+    background-color: rgba(228, 215, 208, 0.95);
     top: 0px;
     left: 0px;
 }

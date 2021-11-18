@@ -1,9 +1,9 @@
-var toast = $('.toast').toast(
-    animation = true,
-    autohide = true,
-    delay=500,
-).show();
 
 
+$('.toast').toast().show();
+
+function closeToast(){
+    $('.toast').toast().hide();
+}
 
 

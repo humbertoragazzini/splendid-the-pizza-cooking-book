@@ -90,7 +90,8 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        products = list(mongo.db.products.find())
+        return redirect(url_for("profile", username=session["user"], products=products))
     return render_template("registration.html")
 
 
@@ -106,7 +107,8 @@ def login():
               existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                products = list(mongo.db.products.find())
+                return redirect(url_for("profile", username=session["user"], products=products))
             else:
                 flash("Incorrect user name or password")
                 return redirect(url_for("login"))
@@ -135,9 +137,11 @@ def profile(username):
 
     if session["user"] == "admin":
         pizzas = mongo.db.recipes.find()
-        return render_template("profile.html", username=username, pizzas=pizzas)
+        products = list(mongo.db.products.find())
+        return render_template("profile.html", username=username, pizzas=pizzas, products=products)
     if session["user"]:
-        return render_template("profile.html", username=username, pizzas=pizzas)
+        products = list(mongo.db.products.find())
+        return render_template("profile.html", username=username, pizzas=pizzas, products=products)
 
     return redirect(url_for("login"))
 
@@ -181,8 +185,8 @@ def addrecipe():
             mongo.db.recipes.insert_one(new_recipe)
             
             flash("Recipe added successful!")
-
-        return redirect(url_for("profile", username=session["user"]))
+        products = list(mongo.db.products.find())
+        return redirect(url_for("profile", username=session["user"], products=products))
 
     return render_template("addrecipe.html")
 
@@ -197,7 +201,8 @@ def delete(id):
     pizzas = mongo.db.recipes.find({"user": session["user"]})
 
     if session["user"]:
-        return render_template("profile.html", username=username, pizzas=pizzas)
+        products = list(mongo.db.products.find())
+        return render_template("profile.html", username=username, pizzas=pizzas, products=products)
     
     return render_template("login.html")
 
@@ -265,8 +270,8 @@ def editrecipe(recipe_name):
         mongo.db.recipes.update({"_id": ObjectId(id)}, new_recipe)
 
         flash("Recipe edited successful!")
-
-        return redirect(url_for("profile", username=session["user"]))
+        products = list(mongo.db.products.find())
+        return redirect(url_for("profile", username=session["user"], products=products))
 
     return render_template("editrecipe.html", recipe=recipe, categories=categories)
 
