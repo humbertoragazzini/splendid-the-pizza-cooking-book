@@ -1,7 +1,7 @@
 toast = $('.toast').toast(
     animation = true,
     autohide = true,
-    delay=1000,
+    delay=5000,
 );
 
 toast.show();
