@@ -38,28 +38,30 @@ def home_page():
 def recipes():
     recipes = list(mongo.db.recipes.find())
     categories = list(mongo.db.categories.find())
+    products = list(mongo.db.products.find())
 
     if request.method == "POST":
         option = request.form.get("category_name")
 
         if option == "all":
             recipes = list(mongo.db.recipes.find())
-            return render_template("recipes.html", recipes=recipes, categories=categories)
+            return render_template("recipes.html", recipes=recipes, categories=categories, products=products)
         
         else:
             recipes = list(mongo.db.recipes.find(
                 {"category": option }))
-            return render_template("recipes.html", recipes=recipes, categories=categories)
+            return render_template("recipes.html", recipes=recipes, categories=categories, products=products)
 
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    return render_template("recipes.html", recipes=recipes, categories=categories, products=products)
 
 
 @app.route("/")
 @app.route("/viewrecipe/<_id>")
 def viewrecipe(_id):
     print(_id)
+    products = list(mongo.db.products.find())
     recipetoview = list(mongo.db.recipes.find({"_id":ObjectId(_id)}))
-    return render_template("viewrecipe.html", recipetoview=recipetoview)
+    return render_template("viewrecipe.html", recipetoview=recipetoview, products=products)
 
 
 @app.route("/")
@@ -281,8 +283,8 @@ def addoffer():
             new_offer = {
                 "user": session["user"],
                 "product_name": request.form.get("product_name").lower(),
-                "price": request.form.get("price"),
                 "description": request.form.get("description"),
+                "url": request.form.get("url"),
             }
             mongo.db.products.insert_one(new_offer)
             flash("Product added!")
