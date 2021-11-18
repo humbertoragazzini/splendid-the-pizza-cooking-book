@@ -276,8 +276,8 @@ li.li-ingredients-tools{
 .add-space{
     overflow: hidden;
     position: fixed;
-    height: 200px;
+    height: 220px;
     width: 300px;
     top:60px;
-    right: 5px;
+    right: 0px;
 }
