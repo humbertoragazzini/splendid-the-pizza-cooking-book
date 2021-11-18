@@ -19,6 +19,6 @@ function hideTheToast(thetoast){
 }
 
 toast.show();
-setTimeout(hideTheToast, 8000, toast);
+setTimeout(hideTheToast, 800000, toast);
 
 

@@ -263,3 +263,7 @@ li.li-ingredients-tools{
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
 }
+
+.toast-body{
+    background-color: rgb(212, 212, 212);
+}
