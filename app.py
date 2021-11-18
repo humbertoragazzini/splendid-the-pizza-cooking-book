@@ -1,5 +1,5 @@
 """
-importing os, flask.
+    importing os, flask.
 """
 import os
 from flask import (
@@ -29,8 +29,8 @@ decorator and fuction to show tring in the app
 @app.route("/")
 @app.route("/home_page")
 def home_page():
-    pizzas = list(mongo.db.recipes.find())
-    return render_template("home.html", pizzas=pizzas)
+    products = list(mongo.db.products.find())
+    return render_template("home.html", products=products)
 
 
 @app.route("/")
@@ -269,11 +269,71 @@ def editrecipe(recipe_name):
     return render_template("editrecipe.html", recipe=recipe, categories=categories)
 
 
+@app.route("/addoffer", methods=["GET", "POST"])
+def addoffer():
+    if request.method == "POST":
+        existing_product_name = mongo.db.products.find_one(
+            {"product_name": request.form.get("product_name").lower()})
+
+        if existing_product_name:
+            flash("Product already exists in the promotion offers")
+        else:
+            new_offer = {
+                "user": session["user"],
+                "product_name": request.form.get("product_name").lower(),
+                "price": request.form.get("price"),
+                "description": request.form.get("description"),
+            }
+            mongo.db.products.insert_one(new_offer)
+            flash("Product added!")
+
+    return render_template("addoffer.html")
+
+
 @app.route("/adminpanel/<username>")
 def adminpanel(username):
 
     return render_template("adminpanel.html", username=username)
 
+@app.route("/removeproductpanel")
+def removeproductpanel():
+    products = list(mongo.db.products.find())
+    return render_template("removeproductpanel.html", products=products)
+
+@app.route("/deleteproduct/<id>", methods=["GET", "POST"])
+def deleteproduct(id):
+
+    mongo.db.products.delete_one({"_id":ObjectId(id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    products = mongo.db.products.find({"user": session["user"]})
+
+    if session["user"]:
+        return render_template("removeproductpanel.html", username=username, products=products)
+    
+    return render_template("login.html")
+
+@app.route("/removeuserpanel")
+def removeuserpanel():
+    users = list(mongo.db.users.find())
+    recipes = list(mongo.db.recipes.find())
+    return render_template("removeuserpanel.html", users=users, recipes=recipes)
+
+@app.route("/deleteuser/<id>", methods=["GET", "POST"])
+def deleteuser(id):
+
+    mongo.db.users.delete_one({"_id":ObjectId(id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    users = list(mongo.db.users.find())
+    recipes = list(mongo.db.recipes.find())
+
+    if session["user"]:
+        return render_template("removeuserpanel.html", username=username, users=users, recipes=recipes)
+    
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

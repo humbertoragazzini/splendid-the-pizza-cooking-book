@@ -1,22 +1,10 @@
-var btn = document.getElementById('stepsadder');
 
-btn.addEventListener('click', addStep);
+var toastLiveExample = document.getElementById('liveToast')
 
-function addStep(){
+  document.addEventListener("DOMContentLoaded", function () {
+    var toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+  })
 
-    var fatherelement = document.getElementById('steps');
-    var childelement = document.createElement('div');
-    childelement.classList = "input-group";
-    var spanelement = document.createElement('span');
-    spanelement.classList='input-group-text';
-    spanelement.innerText='Step N';
-    var textelement = document.createElement('textarea');
-    textelement.classList='form-control';
-    textelement.ariaLabel='Whith textarea';
-    childelement.appendChild(spanelement);
-    childelement.appendChild(textelement);
-    fatherelement.appendChild(childelement);
-    console.log(childelement);
 
-}
 

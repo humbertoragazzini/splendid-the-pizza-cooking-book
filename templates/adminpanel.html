@@ -8,37 +8,37 @@
 
      <div class="row admin-rows-panel text-color-register">
         <div class="col-md-6 tiles-color-pattern3 admin-panel-divs">
-            <h2 class="element-margin">
+            <h3 class="element-margin">
                 Add or delet user:
-            </h2>
+            </h3>
             <div class="col-sm-12 element-margin">
-                <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-lg btn-success rounded"><i class="fas fa-folder-plus"></i><span> Add a new Recipe</span></button></a>
+                <a class="anchors" href="{{ url_for('removeuserpanel') }}"><button type="button" class="btn-lg btn-danger rounded"><span>Delete User</span></button></a>
             </div>
         </div>
         <div class="col-md-6 tiles-color-pattern7 admin-panel-divs">
-            <h2 class="element-margin">
-                Edit remove or delet recipes:
-            </h2>
+            <h3 class="element-margin">
+                Edit or delete recipes:
+            </h3>
             <div class="col-sm-12 element-margin">
-                <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-lg btn-success rounded"><i class="fas fa-folder-plus"></i><span> Add a new Recipe</span></button></a>
+                <a class="anchors" href="{{ url_for('profile', username=session['user']) }}"><button type="button" class="btn-lg btn-success rounded"><span> Edit or delete</span></button></a>
             </div>
         </div>
     </div>
     <div class="row admin-rows-panel text-color-register">
         <div class="col-md-6 tiles-color-pattern9 admin-panel-divs">
-            <h2 class="element-margin">
+            <h3 class="element-margin">
                 Add offers:
-            </h2>
+            </h3>
             <div class="col-sm-12 element-margin">
-                <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-lg btn-success rounded"><i class="fas fa-folder-plus"></i><span> Add a new Recipe</span></button></a>
+                <a class="anchors" href="{{ url_for('addoffer') }}"><button type="button" class="btn-lg btn-success rounded"><span> Add Offers</span></button></a>
             </div>
         </div>
         <div class="col-md-6 tiles-color-pattern15 admin-panel-divs">
-            <h2 class="element-margin">
+            <h3 class="element-margin">
                 Remove offers:
-            </h2>
+            </h3>
             <div class="col-sm-12 element-margin">
-                <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-lg btn-success rounded"><i class="fas fa-folder-plus"></i><span> Add a new Recipe</span></button></a>
+                <a class="anchors" href="{{ url_for('removeproductpanel') }}"><button type="button" class="btn-lg btn-danger rounded"><span>Remove Offers</span></button></a>
             </div>
         </div>
     </div>
