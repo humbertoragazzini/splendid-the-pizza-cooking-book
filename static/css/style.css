@@ -142,39 +142,7 @@ body{
         transform: rotateX(365deg);
     }
   }
-  @keyframes animation-hidden-toastX {
-    from {
-        -webkit-transform: translateX(0x);
-        transform: translateX(0px);
-      }
-      to {
-          -webkit-transform: translateX(2000px);
-          transform: translateX(2000px);
-      }
-    }
-    @keyframes animation-show-toastX {
-        from {
-            -webkit-transform: translateX(2000px);
-            transform: translateX(2000px);
-          }
-          to {
-              -webkit-transform: translateX(0px);
-              transform: translateX(0px);
-          }
-        }
 
-  .toast-show{
-    animation-name: animation-show-toastX;
-    animation-duration: 3s;
-}
-.toast-hidden{
-    animation-name: animation-hidden-toastX;
-    animation-duration: 3s;
-}
-.toast{
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-}
 
   .tile-animated1{
     animation-name: animation-tileX;
@@ -262,3 +230,36 @@ li.li-ingredients-tools{
     height: 250px;
 }
 
+@keyframes animation-hidden-toastX {
+    from {
+        -webkit-transform: translateX(0x);
+        transform: translateX(0px);
+      }
+      to {
+          -webkit-transform: translateX(2000px);
+          transform: translateX(2000px);
+      }
+    }
+    @keyframes animation-show-toastX {
+        from {
+            -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+          }
+          to {
+              -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+          }
+        }
+
+  .toast-show{
+    animation-name: animation-show-toastX;
+    animation-duration: 3s;
+}
+.toast-hidden{
+    animation-name: animation-hidden-toastX;
+    animation-duration: 3s;
+}
+.toast{
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
