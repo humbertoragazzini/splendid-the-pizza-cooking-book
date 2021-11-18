@@ -1,10 +1,9 @@
+toast = $('.toast').toast(
+    animation = true,
+    autohide = true,
+    delay=1000,
+);
 
-var toastLiveExample = document.getElementById('liveToast')
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var toast = new bootstrap.Toast(toastLiveExample)
-    toast.show()
-  })
-
+toast.show();
 
 
