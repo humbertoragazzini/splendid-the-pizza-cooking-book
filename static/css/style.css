@@ -236,14 +236,14 @@ li.li-ingredients-tools{
         transform: translateX(0px);
       }
       to {
-          -webkit-transform: translateX(2000px);
-          transform: translateX(2000px);
+          -webkit-transform: translateX(1080px);
+          transform: translateX(1080px);
       }
     }
     @keyframes animation-show-toastX {
         from {
-            -webkit-transform: translateX(2000px);
-            transform: translateX(2000px);
+            -webkit-transform: translateX(1080px);
+            transform: translateX(1080px);
           }
           to {
               -webkit-transform: translateX(0px);
