@@ -242,12 +242,10 @@ li.li-ingredients-tools{
     }
     @keyframes animation-show-toastX {
         from {
-            -webkit-transform: translateX(1080px);
-            transform: translateX(1080px);
+            left: 2000px;
           }
           to {
-              -webkit-transform: translateX(0px);
-              transform: translateX(0px);
+              left:0px;
           }
         }
 
@@ -262,6 +260,7 @@ li.li-ingredients-tools{
 .add{
     position: fixed;
     top: 0px;
+    left: 0px;
     border-radius: 10px;
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
