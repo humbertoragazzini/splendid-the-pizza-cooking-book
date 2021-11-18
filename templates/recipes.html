@@ -5,6 +5,13 @@
 <div class="main-tittles">
   <h2 class="element-margin text-color-register">Ready to find your favorite recipe?</h2>
 </div>
+<div class="col-12 add-space">
+  <div class="add add-show">
+    <div>
+      <p>Testing add</p>
+    </div>
+  </div>
+</div>
 <form method="POST" action="{{ url_for('recipes') }}">
   <div class="row align-items-center">
     <div class="col-12">
@@ -38,13 +45,5 @@
 
   </div>
 </div>
-
-{% if session["user"] != "admin"  %}
-  <div class="add add-show">
-    <div>
-      <p>Testing add</p>
-    </div>
-  </div>
-  {% endif %}
 
 {% endblock %}

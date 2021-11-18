@@ -258,17 +258,26 @@ li.li-ingredients-tools{
     animation-duration: 3s;
 }
 .add{
-    position: fixed;
+    position: relative;
     top: 0px;
     left: 0px;
     border-radius: 10px;
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     background-color: rgb(89, 255, 191);
 }
 
 .add-body{
     background-color: rgb(212, 212, 212);
+}
+
+.add-space{
+    overflow: hidden;
+    position: fixed;
+    height: 200px;
+    width: 300px;
+    top:60px;
+    right: 5px;
 }
