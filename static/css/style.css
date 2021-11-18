@@ -266,7 +266,6 @@ li.li-ingredients-tools{
     transform: translateX(0px);
     width: 280px;
     height: 180px;
-    background-color: rgb(89, 255, 191);
 }
 
 .add-body{
@@ -280,4 +279,10 @@ li.li-ingredients-tools{
     width: 300px;
     top:60px;
     right: 0px;
+}
+
+.toast{
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
