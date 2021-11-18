@@ -8,6 +8,13 @@
     <form class="element-margin" method="POST" action="{{ url_for('editrecipe', recipe_name=recipe[0].tittle) }}">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-8">
+                {% if session['user'] == "admin" %}
+                <h4 class="text-color-register element-margin">Edit the username:</h4>
+                <div class="input-group input-group-sm mb-3 element-margin">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">User Name</span>
+                    <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{ recipe[0].user }}">
+                </div>
+                {% endif %}
                 <h4 class="text-color-register element-margin">Write the recipe name:</h4>
                 <div class="input-group input-group-sm mb-3 element-margin">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Recipe Name</span>

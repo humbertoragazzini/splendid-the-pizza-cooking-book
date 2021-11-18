@@ -4,8 +4,14 @@
 <div class="row profile-main-div">
     <div class="col-12 spacer-for-registration element-margin">
         <h2 class="text-color-register register" id="registration-tittle">{{ username[0]|upper}}{{username[1:] }}'s Profile</h2>
-     </div>
-    
+    </div>
+
+    {% if username == "admin" %}
+    <div class="col-12 spacer-for-registration element-margin">
+        <h4 class="text-color-register register" id="registration-tittle">Remove or add recipes (all users recipes are show here)</h4>
+    </div>  
+    {% endif %}
+
     <div class="accordion spacer-for-registration element-margin" id="accordionExample">
         {% for recipe in pizzas %}
         <div class="accordion-item">
@@ -23,8 +29,8 @@
                         </div>
                         <div class="col-12 align-self-center">
                             <a href="{{ url_for('viewrecipe',_id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-eye"></i><span> View</span></button></a>
-                            <a href="{{ url_for('editrecipe',recipe_name=recipe.tittle) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-edit"></i><span> Edit</span></button></a>
-                            <a><button type="button" class="btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></button></a>
+                            <a href="{{ url_for('editrecipe', recipe_name=recipe.tittle) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-edit"></i><span> Edit</span></button></a>
+                            <a href="{{ url_for('delete', id=recipe._id)}}"><button type="button" class="btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></button></a>
                         </div>
                     </div>
                 </div>
@@ -32,9 +38,11 @@
         </div>
         {% endfor %}
     </div>
+
     <div class="col-sm-12 element-margin">
         <a class="anchors" href="{{ url_for('addrecipefirst') }}"><button type="button" class="btn-lg btn-success rounded"><i class="fas fa-folder-plus"></i><span> Add a new Recipe</span></button></a>
     </div>
+
 </div>
  
 

@@ -218,3 +218,7 @@ li.li-ingredients-tools{
     font-size: 15px;
     font-style: italic;
 }
+
+.admin-panel-divs{
+    height: 250px;
+}

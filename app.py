@@ -68,6 +68,8 @@ def aboutus():
     return render_template("aboutus.html")
 
 
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -129,6 +131,9 @@ def profile(username):
     
     pizzas = mongo.db.recipes.find({"user": session["user"]})
 
+    if session["user"] == "admin":
+        pizzas = mongo.db.recipes.find()
+        return render_template("profile.html", username=username, pizzas=pizzas)
     if session["user"]:
         return render_template("profile.html", username=username, pizzas=pizzas)
 
@@ -172,11 +177,27 @@ def addrecipe():
                     new_recipe["tool"+str(n)] = request.form.get("tool"+str(n))
 
             mongo.db.recipes.insert_one(new_recipe)
+            
+            flash("Recipe added successful!")
 
-        flash("Recipe added successful!")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("addrecipe.html")
+
+
+@app.route("/delete/<id>", methods=["GET", "POST"])
+def delete(id):
+
+    mongo.db.recipes.delete_one({"_id":ObjectId(id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    pizzas = mongo.db.recipes.find({"user": session["user"]})
+
+    if session["user"]:
+        return render_template("profile.html", username=username, pizzas=pizzas)
+    
+    return render_template("login.html")
 
 
 @app.route("/addrecipefirst", methods=["GET", "POST"])
@@ -206,13 +227,20 @@ def editrecipe(recipe_name):
     if request.method == "POST":
 
         tools_igredient_indexer = range(12)
-
-        new_recipe = {
-            "user": session["user"],
-            "tittle": request.form.get("tittle").lower(),
-            "category": request.form.get("category_name"),
-            "description": request.form.get("description"),
-        }
+        if session["user"] == "admin":
+            new_recipe = {
+                "user": request.form.get("username").lower(),
+                "tittle": request.form.get("tittle").lower(),
+                "category": request.form.get("category_name"),
+                "description": request.form.get("description"),
+            }
+        else:
+            new_recipe = {
+                "user": extractvalues["user"],
+                "tittle": request.form.get("tittle").lower(),
+                "category": request.form.get("category_name"),
+                "description": request.form.get("description"),
+            }
 
         for n in tools_igredient_indexer:
 
@@ -239,6 +267,13 @@ def editrecipe(recipe_name):
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("editrecipe.html", recipe=recipe, categories=categories)
+
+
+@app.route("/adminpanel/<username>")
+def adminpanel(username):
+
+    return render_template("adminpanel.html", username=username)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

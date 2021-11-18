@@ -29,6 +29,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
 						</li>
+						{% if session.user == "admin"%}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('adminpanel', username=session['user']) }}">Admin Panel</a>
+						</li>
+						{% endif %}
 						{% if not session.user %}
 							<li class="nav-item">
 								<a class="nav-link" href="{{ url_for('register') }}">Register</a>
