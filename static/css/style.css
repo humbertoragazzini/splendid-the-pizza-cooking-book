@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 
 .main-content-window{
@@ -250,19 +251,19 @@ li.li-ingredients-tools{
           }
         }
 
-  .toast-show{
+.add-show{
     animation-name: animation-show-toastX;
     animation-duration: 3s;
 }
-.toast-hidden{
+.add-hidden{
     animation-name: animation-hidden-toastX;
     animation-duration: 3s;
 }
-.toast{
+.add{
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
 }
 
-.toast-body{
+.add-body{
     background-color: rgb(212, 212, 212);
 }
