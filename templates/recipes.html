@@ -55,7 +55,7 @@
   <div class="row">
     {% for recipe in recipes %}
     <div class="col-md-4 col-12 tiles-color-pattern{{range(1,16)|random}} text-color-register tile-animated{{range(0,3)|random}}">
-        <h4 class=" element-margin">{{ recipe.tittle[0]|upper}}{{recipe.tittle[1:]}}</h3>
+        <h4 class=" element-margin">{{ recipe.tittle[0]|upper}}{{recipe.tittle[1:35]}}...</h3>
         <p>{{ recipe.description[0]|upper}}{{recipe.description[1:35] }}...</p>
         <div class="col-sm-12 element-margin">
           <a class="anchors" href="{{ url_for('viewrecipe', _id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-eye"></i><strong> View</strong></button></a>

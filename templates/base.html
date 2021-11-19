@@ -12,49 +12,54 @@
     <title>The Pizza Coocking Book</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand" href="{{ url_for('home_page') }}"><h3 style="font-family: 'Style Script', cursive;">Splendid The Pizza Coocking Book</h3></a>
-			<button class="navbar-toggler navbar-toggler-right  nav-bar-button-position" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-	        	<i class="fas fa-bars"></i>
-	      	</button>
-				<div class="collapse navbar-collapse"" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto ">
-						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
-						</li>
-						{% if session.user == "admin"%}
-						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('adminpanel', username=session['user']) }}">Admin Panel</a>
-						</li>
-						{% endif %}
-						{% if not session.user %}
-							<li class="nav-item">
-								<a class="nav-link" href="{{ url_for('register') }}">Register</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ url_for('login') }}">Login</a>
-							</li>
-						{% else %}
-							<li class="nav-item">
-								<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-							</li>
-							<li class="nav-item">
-								<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
-							</li>
-						{% endif %}
-					</ul>
-				</div>
-			
-			
+	<div class="container">
+		<div class="row justify-content-end">
+			<div class="col-8">
+				<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+					<div class="container">
+						<a class="navbar-brand" href="{{ url_for('home_page') }}"><h3 id="brand-spacer" style="font-family: 'Style Script', cursive;">Splendid Pizza Coocking Book</h3></a>
+						<button class="navbar-toggler navbar-toggler-left  nav-bar-button-position" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+							<i class="fas fa-bars"></i>
+						  </button>
+							<div class="collapse navbar-collapse"" id="navbarResponsive">
+								<ul class="navbar-nav ml-auto">
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
+									</li>
+									{% if session.user == "admin"%}
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('adminpanel', username=session['user']) }}">Admin Panel</a>
+									</li>
+									{% endif %}
+									{% if not session.user %}
+										<li class="nav-item">
+											<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+										</li>
+									{% else %}
+										<li class="nav-item">
+											<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+										</li>
+										<li class="nav-item">
+											<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
+										</li>
+									{% endif %}
+								</ul>
+							</div>
+					</div>
+				</nav>
+			</div>
 		</div>
-	</nav>
+	</div>
+    
 	
 	<!-- Main Content -->
 
@@ -120,7 +125,7 @@
 
 					<ul class="list-inline text-center">
 						<li class="list-inline-item">
-							<a href="#">
+							<a href="mailto:notexist@notexist.com">
 								<span class="fa-stack fa-lg">
 	                  				<i class="fas fa-circle fa-stack-2x"></i>
 	                  				<i class="fas fa-envelope-open-text fa-stack-1x fa-inverse"></i>
@@ -128,7 +133,7 @@
 							</a>
 						</li>
 						<li class="list-inline-item">
-							<a href="#">
+							<a href="#" onclick="messageToWhatsapp()" id="whatsapp">
 								<span class="fa-stack fa-lg">
 	                  				<i class="fas fa-circle fa-stack-2x"></i>
 	                  				<i class="fas fa-phone fa-stack-1x fa-inverse"></i>
@@ -142,6 +147,8 @@
 		</div>
 		
 	</footer>
+	<script src="https://cdn.jsdelivr.net/gh/cosmogicofficial/quantumalert@latest/minfile/quantumalert.js" charset="utf-8"></script>
+	<script src="{{ url_for('static', filename='js/script.js') }}" charset="utf-8" defer sync> </script>
 	<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>

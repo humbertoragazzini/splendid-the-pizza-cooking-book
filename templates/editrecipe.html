@@ -31,7 +31,7 @@
                     {% endfor %}
                 </select>
                 <h4 class="text-color-register element-margin">In this space write a descriptions of this amazing pizza recipe:</h4>
-                <div class="input-group element-margin">
+                <div class="input-group input-group-sm element-margin">
                     <span class="input-group-text">Description:</span>
                     <textarea class="form-control" name="description" aria-label="With textarea" placeholder="{{ recipe[0].description }}">{{ recipe[0].description }}</textarea>
                 </div>
@@ -40,7 +40,7 @@
                 {% for data in recipe %}
                     {% for k,v in data.items() %}
                         {% if k[0] == "i": %}
-                            <div class="input-group element-margin">
+                            <div class="input-group input-group-sm element-margin">
                                 <span class="input-group-text">{{k}}</span>
                                 <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>
@@ -52,7 +52,7 @@
                 {% for data in recipe %}
                     {% for k,v in data.items() %}
                         {% if k[1] == "o": %}
-                            <div class="input-group element-margin">
+                            <div class="input-group input-group-sm element-margin">
                                 <span class="input-group-text">{{k}}</span>
                                 <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>
@@ -64,7 +64,7 @@
                 {% for data in recipe %}
                     {% for k,v in data.items() %}
                         {% if k[0] == "s": %}
-                            <div class="input-group element-margin">
+                            <div class="input-group input-group-sm element-margin">
                                 <span class="input-group-text">{{k}}</span>
                                 <textarea class="form-control" name="{{ k }}" aria-label="With textarea" placeholder="{{v}}">{{v}}</textarea>
                             </div>

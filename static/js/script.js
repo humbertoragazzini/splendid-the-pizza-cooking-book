@@ -1,5 +1,6 @@
 
 var locker = document.getElementsByClassName("add-space");
+var whatsapp = document.getElementById("whatsapp");
 $('.toast').toast().show();
 
 function closeToast(id){
@@ -14,3 +15,8 @@ function resetSpaces(){
             locker[i].classList.toggle('hidden-space');
         }
 }
+
+function messageToWhatsapp(){
+Qual.errord("Oh no !","Our whatsapp service is not working at the moment, sorry for the inconveniences");
+}
+

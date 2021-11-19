@@ -22,7 +22,7 @@
                 </select>
 
                 <h4 class="text-color-register element-margin">In this space write a descriptions of this amazing pizza recipe:</h4>
-                <div class="input-group element-margin">
+                <div class="input-group input-group-sm element-margin">
                     <span class="input-group-text">Description:</span>
                     <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
                 </div>
@@ -30,7 +30,7 @@
 
                 <h4 class="text-color-register element-margin">Step by step write here how to prepare the pizza:</h4>
                 {% for step in steps %}
-                <div class="input-group element-margin">
+                <div class="input-group input-group-sm element-margin">
                     <span class="input-group-text">Step N{{ loop.index }}</span>
                     <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea"></textarea>
                 </div>
