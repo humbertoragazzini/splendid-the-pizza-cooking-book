@@ -17,6 +17,6 @@ function resetSpaces(){
 }
 
 function messageToWhatsapp(){
-Qual.errord("Oh no !","Our whatsapp service is not working at the moment, sorry for the inconveniences");
+    Qual.errord("Oh no !","Our whatsapp service is not working at the moment, sorry for the inconveniences");
 }
 

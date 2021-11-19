@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
+/* stye for the text in the footer */
 .text-footer{
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -8,10 +9,13 @@
     text-align: left;
 }
 
+/* body font and overflow */
 body{
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
 }
+
+/* stye for footer color gradient */
 .black-footer{
     margin-top: 50px;
     margin-bottom: 0px;
@@ -21,27 +25,20 @@ body{
     background: linear-gradient(rgba(255, 255, 255, 0), black); 
 }
 
-
-.histories img{
-    width: 100%;
-    position: relative;
-}
-
+/* style for headers */
 h1 {
     text-align: center;
     margin: 20px auto 40px auto;
 }
 
+/* registration text style */
 #registration-tittle{
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     display: inline;
 }
 
-.images-pizzas{
-    overflow: hidden;
-}
-
+/* main content box style */
 .main-box-content{
     min-height: 620px;
     background-color: rgba(0, 0, 0, 0.45);
@@ -51,17 +48,20 @@ h1 {
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* body background */
 body{
     background-image: url('../img/background.jpeg');
     background-size:cover;
 }
 
+/* color text, used in all text */
 .text-color-register{
     color: rgb(255, 255, 255);
     text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
     font-family: 'Quicksand', sans-serif;
 }
 
+/* headers from h2 to h6 style */
 h2{
     font-weight: 300;
 }
@@ -78,101 +78,93 @@ h6{
     font-weight: 300;
 }
 
+/* add margin to the element in registration */
 .spacer-for-registration{
     margin-top: 20px;
 }
 
-
+/* change font size in registration box */
 .lebels-registration{
     font-size: 15px;
 }
 
+/* change font in form */
 .form-control{
     font-size: 1.2em;
 }
 
+/* shadow for buttons in registration */
 .btn.btn-registration{
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-.btn-logout{
-}
-
+/* style for all anchors */
 .anchors{
     text-decoration: none;
     color: white;
 }
 
+/* style for div in profile */
 .profile-main-div{
     height: 100%;
 }
 
+/* margin for first tittle */
 .main-tittles{
     margin-top: 40px;
-
 }
 
+/* add margins to all element of this class */
 .element-margin{
     margin: 30px auto 30px auto;
 }
 
+/* footer element margin to make them looks more tidy */
 .footer-element-margin{
     margin: 15px auto 15px auto;
 }
 
+/* color for icons */
 .white-icons{
     color: white;
 }
 
+/* reduced filter for image in carousel to make the text more nice */
 .image-carrusel{
    filter: brightness(0.4);
 }
 
+/* change font in carousel text */
 .text-carrusel{
     font-family: 'Quicksand', sans-serif;
 }
-#mobile-footer{
-    display: none;
-}
 
 /* display resolution changes */
-
 @media only screen and (max-width:1920px) {
-
     #brand-spacer{
         margin-right: 14vw;
     }
 }
-
 @media only screen and (max-width:1400px) {
-
     #brand-spacer{
         margin-right: 6vw;
     }
 }
-
 @media only screen and (max-width:1300px) {
-
     #brand-spacer{
         margin-right: 5vw;
     }
 }
-
 @media only screen and (max-width:1200px) {
-
     #brand-spacer{
         margin-right: 0vw;
     }
 }
-
 @media only screen and (max-width:1100px) {
-
     #brand-spacer{
         margin-right: 0vw;
     }
 }
-
-
 @media only screen and (max-width: 960px) {
     #mobile-footer{
         display: block;
@@ -185,14 +177,11 @@ h6{
     .carousel-p{
         font-size: 15px;     
     }
-
     #brand-spacer{
         margin-right: 22vw;
     }
-  }
-
-  @media only screen and (max-width: 720px) {
-
+}
+@media only screen and (max-width: 720px) {
     .carousel-p{
         font-size: 15px; 
         margin-top: 5px;  
@@ -202,16 +191,12 @@ h6{
         font-size: 20px;
         margin-bottom: 5px;
     }
-
     #brand-spacer{
         margin-right: 22vw;
     }
+}
 
-  }
-
-  
-
-
+/* animation for recipes tiles */
  @keyframes animation-tileY {
     from {
         -webkit-transform: rotateY(0deg);
@@ -222,7 +207,6 @@ h6{
         transform: rotateY(365deg);
     }
   }
-  
 @keyframes animation-tileX {
   from {
       -webkit-transform: rotateX(0deg);
@@ -232,114 +216,114 @@ h6{
         -webkit-transform: rotateX(365deg);
         transform: rotateX(365deg);
     }
-  }
-
-
-  .tile-animated1{
+}
+.tile-animated1{
     animation-name: animation-tileX;
     animation-duration: 5s;
-  }
-
-  .tile-animated2{
+}
+.tile-animated2{
     animation-name: animation-tileY;
     animation-duration: 5s;
-  }
+}
 
-    .tiles-color-pattern{
+/* color for tiles recipes */
+.tiles-color-pattern{
     background-color: rgba(10, 65, 88, 0.5);
 }
-    .tiles-color-pattern1{
+.tiles-color-pattern1{
       background-color: rgba(75, 131, 120, 0.7);
 }
-    .tiles-color-pattern2{
+.tiles-color-pattern2{
     background-color: rgba(255, 150, 54, 0.7);
 }
-    .tiles-color-pattern3{
+.tiles-color-pattern3{
     background-color: rgba(228, 215, 208, 0.7);
 }
-    .tiles-color-pattern4{
+.tiles-color-pattern4{
     background-color: rgba(218, 102, 50, 0.7);
 }
-    .tiles-color-pattern5{
+.tiles-color-pattern5{
       background-color: rgba(151, 135, 93, 0.7);
 }
-    .tiles-color-pattern6{
+.tiles-color-pattern6{
     background-color: rgba(230, 222, 211, 0.7);
 }
-    .tiles-color-pattern7{
+.tiles-color-pattern7{
     background-color: rgba(155, 142, 139, 0.7);
 }
-    .tiles-color-pattern8{
+.tiles-color-pattern8{
     background-color: rgba(89, 117, 37, 0.7);
 }
-    .tiles-color-pattern9{
+.tiles-color-pattern9{
       background-color: rgba(236, 211, 147, 0.7);
 }
-    .tiles-color-pattern10{
+.tiles-color-pattern10{
     background-color: rgba(239, 240, 234, 0.7);
 }
-    .tiles-color-pattern11{
+.tiles-color-pattern11{
     background-color: rgba(165, 51, 29, 0.7);
 }
-    .tiles-color-pattern12{
+.tiles-color-pattern12{
     background-color: rgba(127, 68, 43, 0.7);
 }
-    .tiles-color-pattern13{
+.tiles-color-pattern13{
       background-color: rgba(145, 150, 102, 0.7);
 }
-    .tiles-color-pattern14{
+.tiles-color-pattern14{
     background-color: rgba(165, 58, 18, 0.7);
 }
-    .tiles-color-pattern15{
+.tiles-color-pattern15{
     background-color: rgba(38, 28, 23, 0.7);
 }
 
+/* text align for list of tools in recipe */
 .lists-ingredients-tools{
     text-align:left;
 }
 
+/* margin to make tools looks more centrated */
 li.li-ingredients-tools{
     margin-left: 65px;
 }
 
+/* style for about us */
 .family-image-li{
     display: inline-block;
     width: 125px;
 }
-
 .img-aboutus{
     width: 120px;
     height: 120px;
 }
-
 .span-about-photos{
     font-size: 15px;
     font-style: italic;
 }
 
+/* fixed in admin panel footer go to high in the web */
 .admin-panel-divs{
     height: 250px;
 }
 
+/* animation for adds */
 @keyframes animation-hidden-toastX {
-    from {
-        -webkit-transform: translateX(0x);
-        transform: translateX(0px);
-      }
-      to {
-          -webkit-transform: translateX(1080px);
-          transform: translateX(1080px);
-      }
-    }
-    @keyframes animation-show-toastX {
-        from {
-            left: 2000px;
-          }
-          to {
-              left:0px;
-          }
+    from{
+            -webkit-transform: translateX(0x);
+            transform: translateX(0px);
         }
-
+    to{
+            -webkit-transform: translateX(1080px);
+            transform: translateX(1080px);
+        }
+    }
+@keyframes animation-show-toastX {
+    from{
+            left: 2000px;
+    }
+    to{
+        left:0px;
+    }
+}
 .add-show{
     animation-name: animation-show-toastX;
     animation-duration: 3s;
@@ -348,6 +332,8 @@ li.li-ingredients-tools{
     animation-name: animation-hidden-toastX;
     animation-duration: 3s;
 }
+
+/* style for adds of products */
 .add{
     position: relative;
     top: 0px;
@@ -358,11 +344,9 @@ li.li-ingredients-tools{
     width: 280px;
     height: 180px;
 }
-
 .add-body{
     background-color: rgb(212, 212, 212);
 }
-
 .add-space{
     overflow: hidden;
     position: fixed;
@@ -371,14 +355,12 @@ li.li-ingredients-tools{
     top:60px;
     right: 0px;
 }
-
 .toast{
     position: relative;
     background-color: rgba(228, 215, 208, 0.95);
     top: 0px;
     left: 0px;
 }
-
 .hidden-space{
     display: none;
 }
