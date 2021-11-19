@@ -128,7 +128,8 @@ body{
 
     .carousel-p{
         font-size: 15px; 
-        margin-top: 5px;   
+        margin-top: 5px;  
+        margin-bottom: 5px; 
     }
     .carousel-h{
         font-size: 20px;
