@@ -5,7 +5,7 @@
     <div class="col-12 spacer-for-registration element-margin">
         <h2 class="text-color-register register" id="registration-tittle">{{ username[0]|upper}}{{username[1:] }}'s Profile</h2>
     </div>
-    {% if session[user] != "admin" %}
+    {% if session['user'] != "admin" %}
     {% set index = range(0,products|length)|random %}
     <div class="col-12 add-space" id={{index}} style="z-index: 11">
         <div class="add add-show" id="{{products[0]._id}}">

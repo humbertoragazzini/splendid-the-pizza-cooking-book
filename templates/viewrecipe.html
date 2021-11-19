@@ -4,7 +4,7 @@
   <div class="main-tittles">
     <h2 class="element-margin text-color-register">{{ recipetoview[0].tittle }}</h2>
   </div>
-  {% if session[user] != "admin" %}
+  {% if session['user'] != "admin" %}
   {% set index = range(0,products|length)|random %}
   <div class="col-12 add-space" id={{index}} style="z-index: 11">
       <div class="add add-show" id="{{products[0]._id}}">
