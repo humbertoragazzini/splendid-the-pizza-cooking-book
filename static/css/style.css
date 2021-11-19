@@ -127,10 +127,10 @@ body{
   @media only screen and (max-width: 720px) {
 
     .carousel-p{
-        font-size: 15px;     
+        font-size: 10px;     
     }
     .carousel-h{
-        font-size: 20px;
+        font-size: 15px;
     }
   }
 
