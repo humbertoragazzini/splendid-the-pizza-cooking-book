@@ -5,30 +5,33 @@
 <div class="main-tittles">
   <h2 class="element-margin text-color-register">Ready to find your favorite recipe?</h2>
 </div>
-<div class="col-12 add-space">
-  <div class="add add-show" id="{{products[0]._id}}">
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <img src="{{ url_for('static', filename='img/logo-toast.jpg') }}" class="rounded me-2" alt="...">
-        {% set index = range(0,products|length)|random %}
-        {% if products|length == 0 %}
-        <strong class="me-auto">Tip of today:</strong>
-        {% else %}
-        <strong class="me-auto">{{products[index].product_name}}:</strong>
-        {% endif%}
-        <button type="button" class="btn-close" data-bs-dismiss="toast" onclick="closeToast()" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        {% if products|length == 0 %}
-        <a href="https://www.alfaforni.com/en/">Visit or website</a>
-        {% else %}
-        {{products[index].description}}
-        <a href="{{products[index].url}}" target="_blank">check it now..</a>
-        {% endif %}
+{% if session[user] != "admin" %}
+{% set index = range(0,products|length)|random %}
+<div class="col-12 add-space" id={{index}} style="z-index: 11">
+    <div class="add add-show" id="{{products[0]._id}}">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="{{ url_for('static', filename='img/logo-toast.jpg') }}" class="rounded me-2" alt="...">
+          
+          {% if products|length == 0 %}
+          <strong class="me-auto">Tip of today:</strong>
+          {% else %}
+          <strong class="me-auto">{{products[index].product_name}}:</strong>
+          {% endif%}
+          <button type="button" class="btn-close" data-bs-dismiss="toast" onclick="closeToast({{index}})" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          {% if products|length == 0 %}
+          <a href="https://www.alfaforni.com/en/">Visit or website</a>
+          {% else %}
+          {{products[index].description}}
+          <a href="{{products[index].url}}" target="_blank">check it now..</a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}
 <form method="POST" action="{{ url_for('recipes') }}">
   <div class="row align-items-center">
     <div class="col-12">

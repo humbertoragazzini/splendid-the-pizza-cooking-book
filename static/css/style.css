@@ -287,3 +287,7 @@ li.li-ingredients-tools{
     top: 0px;
     left: 0px;
 }
+
+.hidden-space{
+    display: none;
+}
