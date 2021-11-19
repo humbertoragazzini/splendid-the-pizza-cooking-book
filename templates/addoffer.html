@@ -1,43 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+    <!-- this page make possible add products-->
+    <div class="row profile-main-div">
+        
+        <div class="col-12 spacer-for-registration element-margin">
+            <h2 class="text-color-register register" id="registration-tittle">Add new offer.</h2>
+        </div>
 
-<div class="row profile-main-div">
-    <div class="col-12 spacer-for-registration element-margin">
-        <h2 class="text-color-register register" id="registration-tittle">Add new offer.</h2>
-    </div>
-    <form class="element-margin" method="POST" action="{{ url_for('addoffer') }}">
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-8">
-                <h4 class="text-color-register element-margin">Write here the product name:</h4>
-                <div class="input-group input-group-sm mb-3 element-margin">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Product Name</span>
-                    <input type="text" name="product_name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
+        <form class="element-margin" method="POST" action="{{ url_for('addoffer') }}">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-8">
+                    
+                    <h4 class="text-color-register element-margin">Write here the product name:</h4>
+                    <div class="input-group input-group-sm mb-3 element-margin">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Product Name</span>
+                        <input type="text" name="product_name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
 
-                <h4 class="text-color-register element-margin">In this space write a descriptions of this product:</h4>
-                <div class="input-group element-margin">
-                    <span class="input-group-text">Description:</span>
-                    <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-                </div>
+                    <h4 class="text-color-register element-margin">In this space write a descriptions of this product:</h4>
+                    <div class="input-group element-margin">
+                        <span class="input-group-text">Description:</span>
+                        <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
+                    </div>
 
-                <h4 class="text-color-register element-margin">Paste here the address (from the oficial alfaforni website) of this product:</h4>
-                <div class="input-group input-group-sm mb-3 element-margin">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">URL:</span>
-                    <input type="text" class="form-control" name="url" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
+                    <h4 class="text-color-register element-margin">Paste here the address (from the oficial alfaforni website) of this product:</h4>
+                    <div class="input-group input-group-sm mb-3 element-margin">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">URL:</span>
+                        <input type="text" class="form-control" name="url" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
 
-                <div class="col-sm-12 element-margin">
-                    <button type="submit" class="btn btn-success rounded btn-registration"> Add Offer! <i class="fas fa-forward"></i></button>
+                    <div class="col-sm-12 element-margin">
+                        <button type="submit" class="btn btn-success rounded btn-registration"> Add Offer! <i class="fas fa-forward"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-    
-</div>
- 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
-
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 {% endblock %}

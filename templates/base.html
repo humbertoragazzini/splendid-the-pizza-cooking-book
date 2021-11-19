@@ -12,6 +12,7 @@
     <title>The Pizza Coocking Book</title>
 </head>
 <body>
+	<!--mobile and desktop navbar-->
 	<div class="container">
 		<div class="row justify-content-end">
 			<div class="col-8">
@@ -20,40 +21,40 @@
 						<a class="navbar-brand" href="{{ url_for('home_page') }}"><h3 id="brand-spacer" style="font-family: 'Style Script', cursive;">Splendid Pizza Coocking Book</h3></a>
 						<button class="navbar-toggler navbar-toggler-left  nav-bar-button-position" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 							<i class="fas fa-bars"></i>
-						  </button>
-							<div class="collapse navbar-collapse"" id="navbarResponsive">
-								<ul class="navbar-nav ml-auto">
+						</button>
+						<div class="collapse navbar-collapse"" id="navbarResponsive">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
+								</li>
+								{% if session.user == "admin"%}
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('adminpanel', username=session['user']) }}">Admin Panel</a>
+								</li>
+								{% endif %}
+								{% if not session.user %}
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+										<a class="nav-link" href="{{ url_for('register') }}">Register</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a>
+										<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+									</li>
+								{% else %}
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('aboutus') }}">About Us</a>
+										<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
 									</li>
-									{% if session.user == "admin"%}
-									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('adminpanel', username=session['user']) }}">Admin Panel</a>
-									</li>
-									{% endif %}
-									{% if not session.user %}
-										<li class="nav-item">
-											<a class="nav-link" href="{{ url_for('register') }}">Register</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="{{ url_for('login') }}">Login</a>
-										</li>
-									{% else %}
-										<li class="nav-item">
-											<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-										</li>
-										<li class="nav-item">
-											<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
-										</li>
-									{% endif %}
-								</ul>
-							</div>
+								{% endif %}
+							</ul>
+						</div>
 					</div>
 				</nav>
 			</div>
@@ -93,6 +94,7 @@
 				<div class="col-sm-12 col-md-6 mx-auto">
 					<div class="col-12 text-center text-color-register element-margin"><h2>Social Media:</h2></div>
 					<ul class="list-inline text-center ">
+						
 						<li class="list-inline-item">
 							<a href="http://www.twitter.com" target="_blank">
 								<span class="fa-stack fa-lg">
@@ -101,6 +103,7 @@
 	                			</span>
 							</a>
 						</li>
+						
 						<li class="list-inline-item">
 							<a href="http://www.facebook.com" target="_blank">
 								<span class="fa-stack fa-lg">
@@ -109,6 +112,7 @@
 	                			</span>
 							</a>
 						</li>
+						
 						<li class="list-inline-item">
 							<a href="http://www.instagram.com" target="_blank">
 								<span class="fa-stack fa-lg">
@@ -117,6 +121,7 @@
 	                			</span>
 							</a>
 						</li>
+
 					</ul>
 				</div>
 				
@@ -132,6 +137,7 @@
 	                			</span>
 							</a>
 						</li>
+
 						<li class="list-inline-item">
 							<a href="#" onclick="messageToWhatsapp()" id="whatsapp">
 								<span class="fa-stack fa-lg">
@@ -140,6 +146,7 @@
 	                			</span>
 							</a>
 						</li>
+						
 					</ul>
 				</div>
 				<p class="copyright text-color-register">Copyright &copy; Splendid CB <span id="dateofcopy"></span></p>

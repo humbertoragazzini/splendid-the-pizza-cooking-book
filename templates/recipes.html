@@ -1,69 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="main-tittles">
-  <h2 class="element-margin text-color-register">Ready to find your favorite recipe?</h2>
-</div>
-{% if session['user'] != "admin" %}
-{% set index = range(0,products|length)|random %}
-<div class="col-12 add-space" id={{index}} style="z-index: 11">
-    <div class="add add-show" id="{{products[0]._id}}">
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="{{ url_for('static', filename='img/logo-toast.jpg') }}" class="rounded me-2" alt="...">
+  <div class="main-tittles">
+    <h2 class="element-margin text-color-register">Ready to find your favorite recipe?</h2>
+  </div>
+  <!--adds with products, only regular user can see it-->
+  {% if session['user'] != "admin" %}
+    {% set index = range(0,products|length)|random %}
+    <div class="col-12 add-space" id={{index}} style="z-index: 11">
+      <div class="add add-show" id="{{products[0]._id}}">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="{{ url_for('static', filename='img/logo-toast.jpg') }}" class="rounded me-2" alt="...">
           
-          {% if products|length == 0 %}
-          <strong class="me-auto">Tip of today:</strong>
-          {% else %}
-          <strong class="me-auto">{{products[index].product_name}}:</strong>
-          {% endif%}
-          <button type="button" class="btn-close" data-bs-dismiss="toast" onclick="closeToast({{index}})" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          {% if products|length == 0 %}
-          <a href="https://www.alfaforni.com/en/">Visit or website</a>
-          {% else %}
-          {{products[index].description}}
-          <a href="{{products[index].url}}" target="_blank">check it now..</a>
-          {% endif %}
+            {% if products|length == 0 %}
+              <strong class="me-auto">Tip of today:</strong>
+            {% else %}
+              <strong class="me-auto">{{products[index].product_name}}:</strong>
+            {% endif%}
+              <button type="button" class="btn-close" data-bs-dismiss="toast" onclick="closeToast({{index}})" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            {% if products|length == 0 %}
+              <a href="https://www.alfaforni.com/en/">Visit or website</a>
+            {% else %}
+              {{products[index].description}}
+              <a href="{{products[index].url}}" target="_blank">check it now..</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-{% endif %}
-<form method="POST" action="{{ url_for('recipes') }}">
-  <div class="row align-items-center">
-    <div class="col-12">
-      <h4 class="text-color-register element-margin">Select the category:</h4>
+  {% endif %}
+<!-- form used to filter categories-->
+  <form method="POST" action="{{ url_for('recipes') }}">
+    <div class="row align-items-center">
+      <div class="col-12">
+        <h4 class="text-color-register element-margin">Select the category:</h4>
+      </div>
+      <div class="col-8">
+        <select class="form-select element-margin" name="category_name" aria-label="Default select example">
+          <option selected value="all">All recipes</option>
+          {% for type in categories %}
+            <option value="{{type.category_name}}">{{type.category_name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-success rounded"><i class="fas fa-search"></i> Show</button>
+      </div>   
     </div>
-    <div class="col-8">
-      <select class="form-select element-margin" name="category_name" aria-label="Default select example">
-        <option selected value="all">All recipes</option>
-        {% for type in categories %}
-          <option value="{{type.category_name}}">{{type.category_name}}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div class="col-4">
-      <button class="btn btn-success rounded"><i class="fas fa-search"></i> Show</button>
-    </div>   
-  </div>
-</form>
+  </form>
 
-<div class="container">
-  <div class="row">
-    {% for recipe in recipes %}
-    <div class="col-md-4 col-12 tiles-color-pattern{{range(1,16)|random}} text-color-register tile-animated{{range(0,3)|random}}">
-        <h4 class=" element-margin">{{ recipe.tittle[0]|upper}}{{recipe.tittle[1:35]}}...</h3>
-        <p>{{ recipe.description[0]|upper}}{{recipe.description[1:35] }}...</p>
-        <div class="col-sm-12 element-margin">
-          <a class="anchors" href="{{ url_for('viewrecipe', _id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-eye"></i><strong> View</strong></button></a>
+  <div class="container">
+    <div class="row">
+      {% for recipe in recipes %}
+        <div class="col-md-4 col-12 tiles-color-pattern{{range(1,16)|random}} text-color-register tile-animated{{range(0,3)|random}}">
+          <h4 class=" element-margin">{{ recipe.tittle[0]|upper}}{{recipe.tittle[1:35]}}...</h3>
+          <p>{{ recipe.description[0]|upper}}{{recipe.description[1:35] }}...</p>
+          <div class="col-sm-12 element-margin">
+            <a class="anchors" href="{{ url_for('viewrecipe', _id=recipe._id) }}"><button type="button" class="btn-sm btn-success rounded"><i class="fas fa-eye"></i><strong> View</strong></button></a>
+          </div>
         </div>
+      {% endfor%}
     </div>
-    {% endfor%}
-
   </div>
-</div>
 
 {% endblock %}

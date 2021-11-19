@@ -1,66 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
+<!--this is the second step when a user is adding a new recipe-->
+    <div class="row profile-main-div">
+        
+        <div class="col-12 spacer-for-registration element-margin">
+            <h2 class="text-color-register register" id="registration-tittle">Add new recipe.</h2>
+        </div>
 
-<div class="row profile-main-div">
-    <div class="col-12 spacer-for-registration element-margin">
-        <h2 class="text-color-register register" id="registration-tittle">Add new recipe.</h2>
-    </div>
-    <form class="element-margin" method="POST" action="{{ url_for('addrecipe') }}">
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-8">
-                <h4 class="text-color-register element-margin">Write the recipe name:</h4>
-                <div class="input-group input-group-sm mb-3 element-margin">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Recipe Name</span>
-                    <input type="text" name="tittle" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                <h4 class="text-color-register element-margin">Select the category:</h4>
-                <select class="form-select element-margin" name="category_name" aria-label="Default select example">
-                    <option selected>Select pizza category</option>
-                    {% for type in categories %}
-                        <option value="{{type.category_name}}">{{type.category_name}}</option>
-                    {% endfor %}
-                </select>
+        <form class="element-margin" method="POST" action="{{ url_for('addrecipe') }}">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-8">
+                    
+                    <h4 class="text-color-register element-margin">Write the recipe name:</h4>
+                    <div class="input-group input-group-sm mb-3 element-margin">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Recipe Name</span>
+                        <input type="text" name="tittle" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <!--With jinja fillup categories,steps,tools and ingedients selecteds by user in addrecipefirst.html-->
+                    <h4 class="text-color-register element-margin">Select the category:</h4>
+                    <select class="form-select element-margin" name="category_name" aria-label="Default select example">
+                        <option selected>Select pizza category</option>
+                            {% for type in categories %}
+                                <option value="{{type.category_name}}">{{type.category_name}}</option>
+                            {% endfor %}
+                    </select>
 
-                <h4 class="text-color-register element-margin">In this space write a descriptions of this amazing pizza recipe:</h4>
-                <div class="input-group input-group-sm element-margin">
-                    <span class="input-group-text">Description:</span>
-                    <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-                </div>
+                    <h4 class="text-color-register element-margin">In this space write a descriptions of this amazing pizza recipe:</h4>
+                    <div class="input-group input-group-sm element-margin">
+                        <span class="input-group-text">Description:</span>
+                        <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
+                    </div>
                 
 
-                <h4 class="text-color-register element-margin">Step by step write here how to prepare the pizza:</h4>
-                {% for step in steps %}
-                <div class="input-group input-group-sm element-margin">
-                    <span class="input-group-text">Step N{{ loop.index }}</span>
-                    <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea"></textarea>
-                </div>
-                {% endfor %}
-                <h4 class="text-color-register element-margin">In the following spaces write the tools used:</h4>
-                {% for tool in tools %}
-                <div class="input-group input-group-sm mb-3 element-margin">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Tool {{ loop.index }}</span>
-                    <input type="text" class="form-control" name="tool{{ loop.index }}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                {% endfor %}
-                <h4 class="text-color-register element-margin">Ingredients:</h4>
-                {% for ingredient in ingredients %}
-                <div class="input-group input-group-sm mb-3 element-margin">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Ingredient {{ loop.index }}</span>
-                    <input type="text" class="form-control" name="ingredient{{ loop.index }}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                {% endfor %}
-                <div class="col-sm-12 element-margin">
-                    <button type="submit" class="btn btn-success rounded btn-registration"> Share Now! <i class="fas fa-forward"></i></button>
+                    <h4 class="text-color-register element-margin">Step by step write here how to prepare the pizza:</h4>
+                    {% for step in steps %}
+                        <div class="input-group input-group-sm element-margin">
+                            <span class="input-group-text">Step N{{ loop.index }}</span>
+                            <textarea class="form-control" name="step{{ loop.index }}" aria-label="With textarea"></textarea>
+                        </div>
+                    {% endfor %}
+                
+                    <h4 class="text-color-register element-margin">In the following spaces write the tools used:</h4>
+                    {% for tool in tools %}
+                        <div class="input-group input-group-sm mb-3 element-margin">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Tool {{ loop.index }}</span>
+                            <input type="text" class="form-control" name="tool{{ loop.index }}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    {% endfor %}
+                
+                    <h4 class="text-color-register element-margin">Ingredients:</h4>
+                    {% for ingredient in ingredients %}
+                        <div class="input-group input-group-sm mb-3 element-margin">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Ingredient {{ loop.index }}</span>
+                            <input type="text" class="form-control" name="ingredient{{ loop.index }}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    {% endfor %}
+                    
+                    <div class="col-sm-12 element-margin">
+                        <button type="submit" class="btn btn-success rounded btn-registration"> Share Now! <i class="fas fa-forward"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-    
-</div>
- 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
-
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 {% endblock %}

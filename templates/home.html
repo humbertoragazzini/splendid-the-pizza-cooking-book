@@ -1,55 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div>
-  <div class="main-tittles">
-    <h2 class="element-margin text-color-register">Welcome to Splendid pizza coocking book</h2>
-  </div>
+<!--home page-->
+  <div>
+    <div class="main-tittles">
+      <h2 class="element-margin text-color-register">Welcome to Splendid pizza coocking book</h2>
+    </div>
+    
+    <!--carousel-->
     <div id="carouselExampleCaptions" class="carousel slide element-margin" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner text-color-register text-carrusel">
-          <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='img/pizza1.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
-            <div class="carousel-caption d-md-block">
-              <h2 class="carousel-h">FIND</h2>
-              <p class="carousel-p"><strong>Find the perfect recipe to enjoy in our recipe catalog</strong></p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='img/pizza2.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
-            <div class="carousel-caption d-md-block">
-              <h2 class="carousel-h">COOK</h2>
-              <p class="carousel-p"><strong>Enjoy cooking as we enjoy making the best kitchen tools for you</strong></p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='img/pizza3.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
-            <div class="carousel-caption d-md-block">
-              <h2 class="carousel-h">ENJOY</h2>
-              <p class="carousel-p"><strong>Delight in the taste and share your own recipes with pizza lovers</strong></p>
-            </div>
+      
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner text-color-register text-carrusel">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='img/pizza1.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
+          <div class="carousel-caption d-md-block">
+            <h2 class="carousel-h">FIND</h2>
+            <p class="carousel-p"><strong>Find the perfect recipe to enjoy in our recipe catalog</strong></p>
           </div>
         </div>
+          
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/pizza2.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
+          <div class="carousel-caption d-md-block">
+            <h2 class="carousel-h">COOK</h2>
+            <p class="carousel-p"><strong>Enjoy cooking as we enjoy making the best kitchen tools for you</strong></p>
+           </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/pizza3.jpg') }}" class="d-block w-100 image-carrusel" alt="...">
+          <div class="carousel-caption d-md-block">
+            <h2 class="carousel-h">ENJOY</h2>
+            <p class="carousel-p"><strong>Delight in the taste and share your own recipes with pizza lovers</strong></p>              </div>
+          </div>
+        </div>
+      
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
+        
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-</div>
-<div class="text-color-register text-carrusel">
-  <p>Splendid pizza coocking book is full of nice and perfects recipes for everyone</p>
-  <a class="achors" href="{{ url_for('recipes') }}"><button class="btn btn-success">ENJOY!</button></a>
-  <p><a href="{{url_for('login')}}" class="text-color-register">Ready to start sharing?</a></p>
-</div>
+    </div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <div class="text-color-register text-carrusel">
+    <p>Splendid pizza coocking book is full of nice and perfects recipes for everyone</p>
+    <a class="achors" href="{{ url_for('recipes') }}"><button class="btn btn-success">ENJOY!</button></a>
+    <p><a href="{{url_for('login')}}" class="text-color-register">Ready to start sharing?</a></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 {% endblock %}
