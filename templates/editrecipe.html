@@ -13,15 +13,15 @@
                     {% if session['user'] == "admin" %}
                         <h4 class="text-color-register element-margin">Edit the username:</h4>
                         <div class="input-group input-group-sm mb-3 element-margin">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">User Name</span>
-                            <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{ recipe[0].user }}">
+                            <span class="input-group-text" id="inputGroup-sizing-sm-username">User Name</span>
+                            <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm-username" value="{{ recipe[0].user }}">
                         </div>
                     {% endif %}
                         
                     <h4 class="text-color-register element-margin">Write the recipe name:</h4>
                     <div class="input-group input-group-sm mb-3 element-margin">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Recipe Name</span>
-                        <input type="text" name="tittle" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{ recipe[0].tittle }}">
+                        <span class="input-group-text" id="inputGroup-sizing-sm-recipe-name">Recipe Name</span>
+                        <input type="text" name="tittle" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm-recipe-name" value="{{ recipe[0].tittle }}">
                     </div>
 
                     <h4 class="text-color-register element-margin">Select the category:</h4>

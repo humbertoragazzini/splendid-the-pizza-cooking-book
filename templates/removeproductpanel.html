@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-12 spacer-for-registration element-margin">
-            <h4 class="text-color-register register" id="registration-tittle">Remove product from the data base</h4>
+            <h4 class="text-color-register register">Remove product from the data base</h4>
         </div>  
 
         <div class="accordion spacer-for-registration element-margin" id="accordionExample">
@@ -26,7 +26,7 @@
                                     <p>{{ product.description[0]|upper}}{{product.description[1:] }}</p>
                                 </div>
                                 <div class="col-12 align-self-center">
-                                    <a href="{{ url_for('deleteproduct', id=product._id)}}"><button type="button" class="btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></button></a>
+                                    <a href="{{ url_for('deleteproduct', product_id=product._id)}}" class="btn-sm btn-danger rounded anchors"><i class="fas fa-trash-alt"></i><span> Delete</span></a>
                                 </div>
                             </div>
                         </div>

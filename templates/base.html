@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +23,7 @@
 						<button class="navbar-toggler navbar-toggler-left  nav-bar-button-position" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 							<i class="fas fa-bars"></i>
 						</button>
-						<div class="collapse navbar-collapse"" id="navbarResponsive">
+						<div class="collapse navbar-collapse" id="navbarResponsive">
 							<ul class="navbar-nav ml-auto">
 								<li class="nav-item">
 									<a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
@@ -50,7 +51,7 @@
 										<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
 									</li>
 									<li class="nav-item">
-										<button type="button" class="btn-sm btn-danger rounded btn-logout"><a href="{{ url_for('logout') }}" class="anchors">Log Out</a></button>
+										<a href="{{ url_for('logout') }}" class="anchors btn-sm btn-danger rounded btn-logout">Log Out</a>
 									</li>
 								{% endif %}
 							</ul>
@@ -88,7 +89,7 @@
 	
 	<!-- Footer -->
 	<footer class="black-footer">
-		<div class="container" id="">
+		<div class="container">
 			<div class="row">
 				
 				<div class="col-sm-12 col-md-6 mx-auto">
@@ -154,8 +155,8 @@
 		</div>
 		
 	</footer>
-	<script src="https://cdn.jsdelivr.net/gh/cosmogicofficial/quantumalert@latest/minfile/quantumalert.js" charset="utf-8"></script>
-	<script src="{{ url_for('static', filename='js/script.js') }}" charset="utf-8" defer sync> </script>
+	<script src="https://cdn.jsdelivr.net/gh/cosmogicofficial/quantumalert@latest/minfile/quantumalert.js"></script>
+	<script src="{{ url_for('static', filename='js/script.js') }}" defer> </script>
 	<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>

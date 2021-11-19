@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-12 spacer-for-registration element-margin">
-            <h4 class="text-color-register register element-margin" id="registration-tittle">Remove user from the data base</h4>
+            <h4 class="text-color-register register element-margin">Remove user from the data base</h4>
             <h6 class="text-color-register register element-margin">Only the user will be deleted, the recipes will remain in the data base</h6>
         </div>  
 
@@ -33,7 +33,7 @@
                                     {% endfor %}
                                 </div>
                                 <div class="col-12 align-self-center">
-                                    <a href="{{ url_for('deleteuser', id=user._id)}}"><button type="button" class="btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></button></a>
+                                    <a href="{{ url_for('deleteuser', user_id=user._id)}}" class="anchors btn-sm btn-danger rounded"><i class="fas fa-trash-alt"></i><span> Delete</span></a>
                                 </div>
                             </div>
                         </div>

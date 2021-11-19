@@ -1,6 +1,6 @@
-"""
+'''
     importing os, flask.
-"""
+'''
 import os
 from flask import (
     Flask, flash,
@@ -21,22 +21,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-"""
-decorator and fuction to show tring in the app
-"""
-
 
 @app.route("/")
 @app.route("/home_page")
-# render home page
 def home_page():
+    '''home page render'''
     return render_template("home.html")
 
 
 @app.route("/")
 @app.route("/recipes", methods=["GET", "POST"])
-# render home recipe page with all the recipes
 def recipes():
+    '''take the recipes from db and render templates with all recipes'''
     allrecipes = list(mongo.db.recipes.find())
     categories = list(mongo.db.categories.find())
     products = list(mongo.db.products.find())
@@ -46,6 +42,8 @@ def recipes():
 
         if option == "all":
             allrecipes = list(mongo.db.recipes.find())
+            if len(allrecipes) == 0:
+                flash("No " + option + " recipes at the moment")
             return render_template(
                 "recipes.html", recipes=allrecipes,
                 categories=categories, products=products)
@@ -53,6 +51,8 @@ def recipes():
         else:
             allrecipes = list(mongo.db.recipes.find(
                 {"category": option}))
+            if len(allrecipes) == 0:
+                flash("No (" + option + ") recipes at the moment")
             return render_template("recipes.html",
                                    recipes=allrecipes,
                                    categories=categories,
@@ -66,8 +66,8 @@ def recipes():
 
 @app.route("/")
 @app.route("/viewrecipe/<_id>")
-# render view recipe page with the recipe selected
 def viewrecipe(_id):
+    '''render view recipe page with the recipe selected'''
     print(_id)
     products = list(mongo.db.products.find())
     recipetoview = list(mongo.db.recipes.find({"_id": ObjectId(_id)}))
@@ -76,16 +76,16 @@ def viewrecipe(_id):
                            products=products)
 
 
-# render the about us with some company info
 @app.route("/")
 @app.route("/aboutus")
 def aboutus():
+    '''render the about us with some company info'''
     return render_template("aboutus.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
-# render register page and take with a post metod all the data from the form
 def register():
+    '''render register page and take with a post metod all the data from the form'''
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -110,8 +110,11 @@ def register():
 
 
 @app.route("/login", methods=["GET", "POST"])
-# render login page and take the login details from the form to check with the db
 def login():
+    '''
+    render login page and take the login
+    details from the form to check with the db
+    '''
     if request.method == "POST":
         # check for user in database
         existing_user = mongo.db.users.find_one(
@@ -138,8 +141,8 @@ def login():
 
 
 @app.route("/logout")
-# close the session
 def logout():
+    '''close the session'''
     # remove session
     flash("Your are successfully logout!")
     session.pop("user")
@@ -147,8 +150,11 @@ def logout():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
-# render the profile page with all the recipes is is an admin render with all the recipes
 def profile(username):
+    '''
+    render the profile page with all the recipes
+    is an admin render with all the recipes
+    '''
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -172,8 +178,11 @@ def profile(username):
 
 
 @app.route("/addrecipe", methods=["GET", "POST"])
-# render de add recipe page and if is post take all data from form to send it to the db
 def addrecipe():
+    '''
+    render de add recipe page and if is
+    post take all data from form to send it to the db
+    '''
     if request.method == "POST":
         existing_recipe_name = mongo.db.recipes.find_one(
             {"tittle": request.form.get("tittle").lower()})
@@ -190,23 +199,23 @@ def addrecipe():
                 "description": request.form.get("description"),
             }
 
-            for n in tools_igredient_indexer:
+            for step_number in tools_igredient_indexer:
 
-                if request.form.get("step"+str(n)):
+                if request.form.get("step"+str(step_number)):
 
-                    new_recipe["step"+str(n)] = request.form.get("step"+str(n))
+                    new_recipe["step"+str(step_number)] = request.form.get("step"+str(step_number))
 
-            for n in tools_igredient_indexer:
+            for ingredient_number in tools_igredient_indexer:
 
-                if request.form.get("ingredient"+str(n)):
+                if request.form.get("ingredient"+str(ingredient_number)):
 
-                    new_recipe["ingredient"+str(n)] = request.form.get("ingredient"+str(n))
+                    new_recipe["ingredient"+str(ingredient_number)] = request.form.get("ingredient"+str(ingredient_number))
 
-            for n in tools_igredient_indexer:
+            for tool_number in tools_igredient_indexer:
 
-                if request.form.get("tool"+str(n)):
+                if request.form.get("tool"+str(tool_number)):
 
-                    new_recipe["tool"+str(n)] = request.form.get("tool"+str(n))
+                    new_recipe["tool"+str(tool_number)] = request.form.get("tool"+str(tool_number))
 
             mongo.db.recipes.insert_one(new_recipe)
 
@@ -219,17 +228,20 @@ def addrecipe():
     return render_template("addrecipe.html")
 
 
-@app.route("/delete/<id>", methods=["GET", "POST"])
-# delete the recipe from db and reload recipe list
-def delete(id):
-
-    mongo.db.recipes.delete_one({"_id": ObjectId(id)})
+@app.route("/delete/<recipe_id>", methods=["GET", "POST"])
+def delete(recipe_id):
+    '''
+    delete the recipe from db and reload recipe list
+    '''
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     pizzas = mongo.db.recipes.find({"user": session["user"]})
 
     if session["user"]:
+        if session["user"]=="admin":
+            pizzas = mongo.db.recipes.find()
         products = list(mongo.db.products.find())
         return render_template("profile.html",
                                username=username,
@@ -240,8 +252,11 @@ def delete(id):
 
 
 @app.route("/addrecipefirst", methods=["GET", "POST"])
-# render add recipe first, its the first step, send category n of steps, tools, and ingredients to addrecipe
 def addrecipefirst():
+    '''
+    render add recipe first, its the first step,
+    send category n of steps, tools, and ingredients to addrecipe
+    '''
     if request.method == "POST":
 
         number_of_steps = request.form.get("steps")
@@ -257,18 +272,21 @@ def addrecipefirst():
 
 
 @app.route("/editrecipe/<recipe_name>", methods=["GET", "POST"])
-# render edite recipe and take data from form to update db
 def editrecipe(recipe_name):
-
+    '''
+    render edit recipe and take data from form to update db
+    '''
     recipe = list(mongo.db.recipes.find({"tittle": recipe_name}))
+    recipes = list(mongo.db.recipes.find({"user": session['user']}))
     categories = mongo.db.categories.find()
     extractvalues = recipe[0]
-    id = extractvalues["_id"]
+    product_id = extractvalues["_id"]
 
     if request.method == "POST":
 
         tools_igredient_indexer = range(12)
         if session["user"] == "admin":
+            recipes = list(mongo.db.recipes.find())
             new_recipe = {
                 "user": request.form.get("username").lower(),
                 "tittle": request.form.get("tittle").lower(),
@@ -283,36 +301,39 @@ def editrecipe(recipe_name):
                 "description": request.form.get("description"),
             }
 
-        for n in tools_igredient_indexer:
+        for step_number in tools_igredient_indexer:
 
-            if request.form.get("step"+str(n)):
+            if request.form.get("step"+str(step_number)):
 
-                new_recipe["step"+str(n)] = request.form.get("step"+str(n))
+                new_recipe["step"+str(step_number)] = request.form.get("step"+str(step_number))
 
-        for n in tools_igredient_indexer:
+        for ingredient_number in tools_igredient_indexer:
 
-            if request.form.get("ingredient"+str(n)):
+            if request.form.get("ingredient"+str(ingredient_number)):
 
-                new_recipe["ingredient"+str(n)] = request.form.get("ingredient"+str(n))
+                new_recipe["ingredient"+str(ingredient_number)] = request.form.get("ingredient"+str(ingredient_number))
 
-        for n in tools_igredient_indexer:
+        for tool_number in tools_igredient_indexer:
 
-            if request.form.get("tool"+str(n)):
+            if request.form.get("tool"+str(tool_number)):
 
-                new_recipe["tool"+str(n)] = request.form.get("tool"+str(n))
+                new_recipe["tool"+str(tool_number)] = request.form.get("tool"+str(tool_number))
 
-        mongo.db.recipes.update({"_id": ObjectId(id)}, new_recipe)
+        mongo.db.recipes.update({"_id": ObjectId(product_id)}, new_recipe)
 
         flash("Recipe edited successful!")
         products = list(mongo.db.products.find())
-        return redirect(url_for("profile", username=session["user"], products=products))
+        return redirect(url_for("profile", username=session["user"], products=products, reicpes=recipes))
 
     return render_template("editrecipe.html", recipe=recipe, categories=categories)
 
 
 @app.route("/addoffer", methods=["GET", "POST"])
-# render addoffer panel to add products and male them popups for the regular users
 def addoffer():
+    '''
+    render addoffer panel to add products
+    and male them popups for the regular users
+    '''
     if request.method == "POST":
         existing_product_name = mongo.db.products.find_one(
             {"product_name": request.form.get("product_name").lower()})
@@ -333,22 +354,28 @@ def addoffer():
 
 
 @app.route("/adminpanel/<username>")
-# render the admin control panel
 def adminpanel(username):
+    '''
+    render the admin control panel
+    '''
     return render_template("adminpanel.html", username=username)
 
 
 @app.route("/removeproductpanel")
-# render the remove product panel to delete products from db
 def removeproductpanel():
+    '''
+    render the remove product panel to delete products from db
+    '''
     products = list(mongo.db.products.find())
     return render_template("removeproductpanel.html", products=products)
 
 
-@app.route("/deleteproduct/<id>", methods=["GET", "POST"])
-# remove the products from db and update list of products
-def deleteproduct(id):
-    mongo.db.products.delete_one({"_id": ObjectId(id)})
+@app.route("/deleteproduct/<product_id>", methods=["GET", "POST"])
+def deleteproduct(product_id):
+    '''
+    remove the products from db and update list of products
+    '''
+    mongo.db.products.delete_one({"_id": ObjectId(product_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -361,18 +388,21 @@ def deleteproduct(id):
 
 
 @app.route("/removeuserpanel")
-# render remove user panel with the recipes of the users
 def removeuserpanel():
+    '''
+    render remove user panel with the recipes of the users
+    '''
     users = list(mongo.db.users.find())
     recipes = list(mongo.db.recipes.find())
     return render_template("removeuserpanel.html", users=users, recipes=recipes)
 
 
-@app.route("/deleteuser/<id>", methods=["GET", "POST"])
-# render delete user panel to make a list of users
-def deleteuser(id):
-
-    mongo.db.users.delete_one({"_id": ObjectId(id)})
+@app.route("/deleteuser/<user_id>", methods=["GET", "POST"])
+def deleteuser(user_id):
+    '''
+    render delete user panel to make a list of users
+    '''
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
