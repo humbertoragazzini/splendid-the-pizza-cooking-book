@@ -2,7 +2,7 @@
 {% block content %}
 
   <div class="main-tittles">
-    <h2 class="element-margin text-color-register">{{ recipetoview[0].tittle }}</h2>
+    <h2 class="element-margin text-color-register">{{ recipetoview[0].tittle[0]|upper}}{{recipetoview[0].tittle[1:] }}</h2>
   </div>
   {% if session['user'] != "admin" %}
   {% set index = range(0,products|length)|random %}
