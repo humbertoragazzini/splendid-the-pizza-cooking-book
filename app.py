@@ -85,7 +85,10 @@ def aboutus():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    '''render register page and take with a post metod all the data from the form'''
+    '''
+    render register page and take with
+    a post metod all the data from the form
+    '''
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -203,19 +206,25 @@ def addrecipe():
 
                 if request.form.get("step"+str(step_number)):
 
-                    new_recipe["step"+str(step_number)] = request.form.get("step"+str(step_number))
+                    new_recipe["step"+str(step_number)] = request.form.get(
+                        "step"+str(step_number))
 
             for ingredient_number in tools_igredient_indexer:
 
                 if request.form.get("ingredient"+str(ingredient_number)):
 
-                    new_recipe["ingredient"+str(ingredient_number)] = request.form.get("ingredient"+str(ingredient_number))
+                    new_recipe[
+                        "ingredient"+str(ingredient_number)] = \
+                            request.form.get(
+                                "ingredient"+str(ingredient_number))
 
             for tool_number in tools_igredient_indexer:
 
                 if request.form.get("tool"+str(tool_number)):
 
-                    new_recipe["tool"+str(tool_number)] = request.form.get("tool"+str(tool_number))
+                    new_recipe["tool"+str(tool_number)] = \
+                        request.form.get(
+                            "tool"+str(tool_number))
 
             mongo.db.recipes.insert_one(new_recipe)
 
@@ -240,7 +249,7 @@ def delete(recipe_id):
     pizzas = mongo.db.recipes.find({"user": session["user"]})
 
     if session["user"]:
-        if session["user"]=="admin":
+        if session["user"] == "admin":
             pizzas = mongo.db.recipes.find()
         products = list(mongo.db.products.find())
         return render_template("profile.html",
@@ -265,7 +274,11 @@ def addrecipefirst():
 
         if number_of_steps != "0" and ingredients != "0" and tools != "0":
             categories = mongo.db.categories.find()
-            return render_template("addrecipe.html", tools=tools, ingredients=ingredients, steps=number_of_steps, categories=categories)
+            return render_template("addrecipe.html",
+                                   tools=tools,
+                                   ingredients=ingredients,
+                                   steps=number_of_steps,
+                                   categories=categories)
         else:
             flash("Please, select the number of steps")
     return render_template("addrecipefirst.html")
@@ -277,7 +290,7 @@ def editrecipe(recipe_name):
     render edit recipe and take data from form to update db
     '''
     recipe = list(mongo.db.recipes.find({"tittle": recipe_name}))
-    recipes = list(mongo.db.recipes.find({"user": session['user']}))
+    user_recipes = list(mongo.db.recipes.find({"user": session['user']}))
     categories = mongo.db.categories.find()
     extractvalues = recipe[0]
     product_id = extractvalues["_id"]
@@ -286,7 +299,7 @@ def editrecipe(recipe_name):
 
         tools_igredient_indexer = range(12)
         if session["user"] == "admin":
-            recipes = list(mongo.db.recipes.find())
+            user_recipes = list(mongo.db.recipes.find())
             new_recipe = {
                 "user": request.form.get("username").lower(),
                 "tittle": request.form.get("tittle").lower(),
@@ -305,27 +318,36 @@ def editrecipe(recipe_name):
 
             if request.form.get("step"+str(step_number)):
 
-                new_recipe["step"+str(step_number)] = request.form.get("step"+str(step_number))
+                new_recipe["step"+str(step_number)] = \
+                    request.form.get("step"+str(step_number))
 
         for ingredient_number in tools_igredient_indexer:
 
             if request.form.get("ingredient"+str(ingredient_number)):
 
-                new_recipe["ingredient"+str(ingredient_number)] = request.form.get("ingredient"+str(ingredient_number))
+                new_recipe["ingredient"+str(ingredient_number)] = \
+                    request.form.get(
+                        "ingredient"+str(ingredient_number))
 
         for tool_number in tools_igredient_indexer:
 
             if request.form.get("tool"+str(tool_number)):
 
-                new_recipe["tool"+str(tool_number)] = request.form.get("tool"+str(tool_number))
+                new_recipe["tool"+str(tool_number)] = \
+                    request.form.get("tool"+str(tool_number))
 
         mongo.db.recipes.update({"_id": ObjectId(product_id)}, new_recipe)
 
         flash("Recipe edited successful!")
         products = list(mongo.db.products.find())
-        return redirect(url_for("profile", username=session["user"], products=products, reicpes=recipes))
+        return redirect(url_for("profile",
+                                username=session["user"],
+                                products=products,
+                                reicpes=user_recipes))
 
-    return render_template("editrecipe.html", recipe=recipe, categories=categories)
+    return render_template("editrecipe.html",
+                           recipe=recipe,
+                           categories=categories)
 
 
 @app.route("/addoffer", methods=["GET", "POST"])
@@ -382,7 +404,9 @@ def deleteproduct(product_id):
     products = mongo.db.products.find({"user": session["user"]})
 
     if session["user"]:
-        return render_template("removeproductpanel.html", username=username, products=products)
+        return render_template("removeproductpanel.html",
+                               username=username,
+                               products=products)
 
     return render_template("login.html")
 
@@ -393,8 +417,10 @@ def removeuserpanel():
     render remove user panel with the recipes of the users
     '''
     users = list(mongo.db.users.find())
-    recipes = list(mongo.db.recipes.find())
-    return render_template("removeuserpanel.html", users=users, recipes=recipes)
+    user_recipes = list(mongo.db.recipes.find())
+    return render_template("removeuserpanel.html",
+                           users=users,
+                           recipes=user_recipes)
 
 
 @app.route("/deleteuser/<user_id>", methods=["GET", "POST"])
@@ -407,10 +433,13 @@ def deleteuser(user_id):
         {"username": session["user"]})["username"]
 
     users = list(mongo.db.users.find())
-    recipes = list(mongo.db.recipes.find())
+    user_recipes = list(mongo.db.recipes.find())
 
     if session["user"]:
-        return render_template("removeuserpanel.html", username=username, users=users, recipes=recipes)
+        return render_template("removeuserpanel.html",
+                               username=username,
+                               users=users,
+                               recipes=user_recipes)
 
     return render_template("login.html")
 
