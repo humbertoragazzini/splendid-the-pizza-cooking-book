@@ -10,15 +10,15 @@ Welcome to Splendid pizza , a space created by pizza lovers for pizza lovers, wh
 
 **Is the content culturally appropriate?** 
 
-- Culturally speaking in the uk the italian food, and more the pizza have a big impact in the marrket, owrth 2.1billon pounds is the prove of a big love for this product. 
+- Culturally speaking in the uk the italian food, and more the pizza have a big impact in the market, owrth 2.1 billon pounds is the prove of a big love for this product. 
 
 **Is the content relevant?** 
 
-- The website its aimed for the pizza lovers, who want to not just make or take recipies from the cooking book, also they can share their own recipies to the pizza lovers comunity, and the access to a wide group of coocking tools to make it more easy 
+- The website its aimed for the pizza lovers, who want to not just make or take recipes from the cooking book, also they can share their own recipes to the pizza lovers comunity, and the access to a wide group of coocking tools to make it more easy 
 
 **Can we track a catalogue the content in an intuitive way?**
 
-- This website will be divide in sections to make it more intuitive and easy for the user, the main sections will be The coocking book itself, My recipies, a about us.
+- This website will be divide in sections to make it more intuitive and easy for the user, the main sections will be The coocking book itself, My recipes, a about us.
 
 **Is the technology appropiate?** 
 
@@ -26,21 +26,21 @@ Welcome to Splendid pizza , a space created by pizza lovers for pizza lovers, wh
 
 **Comprany Goals.** 
 
-- Because its a coocking ampliance company they love this art, the main goal is reach all the pizza comunity lovers and show them all the coocking tools avaible for the recipies, with this function make possible sell the product or make the brand known in the comunity 
+- Because its a coocking ampliance company they love this art, the main goal is reach all the pizza comunity lovers and show them all the coocking tools avaible for the recipes, with this function make possible sell the product or make the brand known in the comunity 
 
 **Users goals.** 
 
-- The user goal is  find a new way to cook a pizza, share recipies, and enjoy new ones, share opinions about the differents recipies, and if its needed have the possibility to find the tool to make it perfect 
+- The user goal is  find a new way to cook a pizza, share recipes, and enjoy new ones, share opinions about the differents recipes, and if its needed have the possibility to find the tool to make it perfect 
  
 **What are the pros of what they're doing, and what are the cons?** 
-- The pros of macking a coocking social media book, its the avility to make our brand more known, so its not just the people from the comunity searchins a recipie or sharing it, its about make our brand notice in every single recipie.
-- The cons can be the posibility of the user to be more concentrate in the recipies than in the product itself, we can fix this with a good presens of the product in the recipie section.
+- The pros of macking a coocking social media book, its the avility to make our brand more known, so its not just the people from the comunity searching a recipe or sharing it, its about make our brand notice in every single recipe.
+- The cons can be the posibility of the user to be more concentrate in the recipes than in the product itself, we can fix this with a good presens of the product in the recipe section.
 	 
 **What are they missing?** 
-- They have videos, times, ingredients, and an explanation about every single step, but in any place they wrote wich tool you need to cook it, so in our website will be including this, and let the consumer know before they start what are the ingredient, tools and time necesary to make the recipie.
+- They have videos, times, ingredients, and an explanation about every single step, but in any place they wrote wich tool you need to cook it, so in our website will be including this, and let the consumer know before they start what are the ingredient, tools and time necesary to make the recipe.
 	 
 **What are they doing, but they could be doing better?** 
-- They can inprove the accesibility of the website, the competitor have videos made with background music without any instruction of what its happening in the video, wich is really limiting the audience of this video for the peaple who can see, they can add not just a video with music, we can add instructions, and a more detailed recipie for each of the steps.
+- They can inprove the accesibility of the website, the competitor have videos made with background music without any instruction of what its happening in the video, wich is really limiting the audience of this video for the peaple who can see, they can add not just a video with music, we can add instructions, and a more detailed recipe for each of the steps.
 
 ## **Scope**
 
@@ -69,7 +69,7 @@ In this section the basic structure will be outlined, and how the information wi
 *	**What a guest would like to see the first time:**
     * Recipes about pizzas
     * A quick way to see all recipes
-    * A navbar with access to a profile (control panel) to an easy way to share recipies
+    * A navbar with access to a profile (control panel) to an easy way to share recipes
     * A contact details, social media (if is a possible customer lookingfor cocking tools)
 
 
@@ -180,45 +180,37 @@ The main navbar change, its not the same always, so we have.
 
 **Middle Section**
 
-The middle section depending of the template rendered are:
+The middle section depending of the template rendered are.
 
-- Home page with some nice carousel made with bootstrap inviting the user to visit the recipes section:
+- Home page with some nice carousel made with bootstrap inviting the user to visit the recipes section.
 
-- The recipe section where the user can filter the recipes and view all the avaibles recipes loadeds in the db:
+- The recipe section where the user can filter the recipes and view all the avaibles recipes loadeds in the db.
 
-- The login section:
+- The login section.
 
-- The register section:
+- The register section.
 
 - The profile section where the user can add recipes, delete and edit it.
 
-- The admin panel (for admin users):
+- The admin panel (for admin users).
 
-- The add offer, remove offer, remove user. Add, delete and edit recipes section:
+- The add offer, remove offer, remove user. Add, delete and edit recipes section.
 
-- Image of the completed web site:
+- Image of the completed web site.
 
 **The footer**
 
-The footer is made with the social media in mind, but in a really minimalistic way:
+The footer is made with the social media in mind, but in a really minimalistic way.
 
-![footer gif](.gif)
+![website](README-FILES/images/gifs/website.gif)
 
 # **Testing**
 
 ## **Responsive**
     
-The site it has made to be responsive for all devices:
-    
-* Image of the mobile web site: 
-   
-   
-    ![The full web gif](.gif)
-    
 * Image to show the responsive design in the web site: 
    
-   
-    ![The full web gif](.gif)
+![The full web mobile](README-FILES/images/gifs/website-mobile.gif)
 
 ## **Validators**
 
@@ -357,6 +349,7 @@ The site it has made to be responsive for all devices:
         - Web Browsers: 
             - EDGE: Versión 91.0.864.37
             - Chrome: Versión 90.0.4430.212
+            - bug in navbar (possible problem with navbar spacer only in chrome when resolution go below 1400px width)
     - PC (Linux Ubuntu) Ver. 
         - Web Browsers: 
             - Mozilla: 93.0 (64-bit)
@@ -416,7 +409,7 @@ To clone de repository follow this steps:
 
 2. b) After install gitbash in the command prompt select the path where you prefer to save the files.
 
-2. c) Execute the command in gitbash: git clone https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2.git
+2. c) Execute the command in gitbash: git clone https://github.com/humbertoragazzini/splendid-the-pizza-coocking-book.git
 
 ## To deploy my project follow this:
 
