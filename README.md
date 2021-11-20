@@ -85,8 +85,6 @@ In this section the basic structure will be outlined, and how the information wi
     * **Profile**
         * For all user a profile panel with the hability to add, delete and edit recipes, for the admin user, add, edit and delete recipes, add or delete offers and delete users.
 
-        
-/////////////////////////// pegar imagen del diagrama /////////////////////////////////
 
 ## **Skeleton**
 
@@ -166,45 +164,9 @@ Resolution | Desktop porcentage
 
 Between the 1080px and 768px resolution we have almost the 50% of the users, if we add 768px, 864px and 900p we have more than 60% of the users.
 
-### *Navbar**
-
-The main navbar change, its not the same always, so we have:
-
-- The navbar when the user is not login:
-
-- The navbar when the user is login:
-
-- The navbar when the user is login as a administrator:
+### *The site**
 
 
-### **Middle Section**
-
-The middle section depending of the template rendered are:
-
-- Home page with some nice carousel made with bootstrap inviting the user to visit the recipes section:
-
-- The recipe section where the user can filter the recipes and view all the avaibles recipes loadeds in the db:
-
-- The login section:
-
-- The register section:
-
-- The profile section where the user can add recipes, delete and edit it.
-
-- The admin panel (for admin users):
-
-- The add offer, remove offer, remove user. Add, delete and edit recipes section:
-
-- Image of the completed web site:
-    
-    
-    ![The full web gif]()
-
-### **The footer**
-
-The footer is made with the social media in mind, but in a really minimalistic way:
-
-![footer gif](.gif)
 
 # **Testing**
 
@@ -306,6 +268,7 @@ The site it has made to be responsive for all devices:
 * Home:
     - Tested:
         1) Navbar (all links tested).
+            - bug in navbar (possible problem with navbar spacer only in chrome when admin)
         2) All buttons: position, size, all correct.
         3) Carousel working
 
@@ -401,9 +364,27 @@ The site it has made to be responsive for all devices:
 
 # **Deployment**
 
-## To deploy my project:
-
 ## **To clone my repository in github**
+
+To clone my repository in github
+
+To clone de repository follow this steps:
+
+1. a) In my repository you can click in download.
+
+1. b) Safe the file an after that uncompressed the file in you desired directory.
+
+1. c) Now you can open the project with any IDE.
+
+2. a) First of all we need to install git from this link GitBash .
+
+2. b) After install gitbash in the command prompt select the path where you prefer to save the files.
+
+2. c) Execute the command in gitbash: git clone https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2.git
+
+## To deploy my project follow this:
+
+![deploy to heroku](README-FILES/images/deploy/deploy.gif)
 
 # **Credits**
 
