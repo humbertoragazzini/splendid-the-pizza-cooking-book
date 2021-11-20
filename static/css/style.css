@@ -40,7 +40,7 @@ h1 {
 
 /* main content box style */
 .main-box-content{
-    min-height: 620px;
+    min-height: 850px;
     background-color: rgba(0, 0, 0, 0.45);
     border-radius: 5px;
     margin-top: 80px;

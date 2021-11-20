@@ -164,9 +164,41 @@ Resolution | Desktop porcentage
 
 Between the 1080px and 768px resolution we have almost the 50% of the users, if we add 768px, 864px and 900p we have more than 60% of the users.
 
-### *The site**
+### *In the image below we can see all the parts of the website in action**
 
+The main navbar change, its not the same always, so we have.
 
+- The navbar when the user is not login.
+
+- The navbar when the user is login.
+
+- The navbar when the user is login as a administrator.
+
+**Middle Section**
+
+The middle section depending of the template rendered are:
+
+- Home page with some nice carousel made with bootstrap inviting the user to visit the recipes section:
+
+- The recipe section where the user can filter the recipes and view all the avaibles recipes loadeds in the db:
+
+- The login section:
+
+- The register section:
+
+- The profile section where the user can add recipes, delete and edit it.
+
+- The admin panel (for admin users):
+
+- The add offer, remove offer, remove user. Add, delete and edit recipes section:
+
+- Image of the completed web site:
+
+**The footer**
+
+The footer is made with the social media in mind, but in a really minimalistic way:
+
+![footer gif](.gif)
 
 # **Testing**
 
