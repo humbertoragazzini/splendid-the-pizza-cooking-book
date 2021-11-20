@@ -93,7 +93,7 @@ In this section the basic structure will be outlined, and how the information wi
 ## **Skeleton**
 
 
-I start doing draws about this project, and how will present the structure, below you can see each link is a really rudimentary draw of the differet sections
+I start doing drawings about this project, and how will present the structure, below you can see each link is a really rudimentary draw of the differet sections
 
 _Links of all the individual wireframes:_
 
