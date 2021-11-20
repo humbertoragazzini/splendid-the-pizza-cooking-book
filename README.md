@@ -301,3 +301,161 @@ The site it has made to be responsive for all devices:
     ![js validation](README-FILES/images/validators/js/JSHint.png)
 
 	 
+## **Testing Web Site**
+
+* Home:
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct.
+        3) Carousel working
+
+* Recipes:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct acordion and view.
+
+
+* About Us (user):
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct.
+
+* Profile (user and admin):
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct, acordion and edit,delete, view and add recipe working.
+
+* Add, delete, edit recipes (user and admin):
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct.
+
+* Delete users, offers and add offers (admin):
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct.
+
+* View recipe (user and admin):
+    - Tested:
+        1) Navbar (all links tested).
+        2) All buttons: position, size, all correct.
+
+## **Unfixed Bugs**
+
+* I did not find any errors, the website was tested on the following devices:
+    - Samsung s9+ (Android) Ver. 
+        - Web Browser: 
+            - Chrome: Versión 96.0.4664.45
+    - Iphone 12 Pro (IOS) ver.14.6
+        - Web Browsers: 
+            - Zafari: ver. 14
+    - Galaxy Tab S4 (Android) Ver.10 - 4.4.205-19646842
+        - Web Browsers: 
+            - EDGE: ver.46.04.4.5157
+            - Chrome: ver.91.0.4472.77
+            - Mozilla: ver.88.1.3
+            - Opera: ver.63.3.3116.58675
+    - Pc (windows 10) Ver.20H2 - 19042.985
+        - Web Browsers: 
+            - EDGE: Versión 91.0.864.37
+            - Chrome: Versión 90.0.4430.212
+    - PC (Linux Ubuntu) Ver. 
+        - Web Browsers: 
+            - Mozilla: 93.0 (64-bit)
+
+
+# **Frameworks and Tecnologies**
+
+- HTML5
+
+- CSS
+
+- PYTHON
+
+- FLASK
+
+- BOOTSTRAP 4.5.1/5.1 - _[bootstrap](https://getbootstrap.com/)_.
+
+- GITPOD - _[gimp photo editor](https://imagen.online-convert.com/es/convertir/mp4-a-gif)_.
+
+- GITHUB - _[github](https://github.com/)_.
+
+- W3C VALIDATOR - Validator html and css: _[w3c validator](https://validator.w3.org/)_.
+
+- GIMP - GIMP photo editor: _[gimp photo editor](https://www.gimp.org/)_.
+
+- ACTION SCREEN RECORDER - Screen recorder: _[ACTION](https://mirillis.com/es/productos/action-grabacion-de-pantalla-y-videojuegos.html)_. 
+
+- Resolve Video Editor - _[Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)_.
+
+- ONLINE-CONVERTER - Video to gif: _[Online converter](https://imagen.online-convert.com/es/convertir/mp4-a-gif)_.
+
+- GOOGLE FONT - Google fonts: _[google font](https://fonts.google.com/)_.
+
+- MongoDB - MongoDb: _[Mongo](https://www.mongodb.com/)_.
+
+- JSHint validator: _[JSHint](https://www.jshint.com)_.
+
+- PIP8 validator: _[PIP8](http://pep8online.com/)_.
+
+- Quantum alert: _[Quantum](https://quantumalert.cosmogic.com/)_.
+
+# **Deployment**
+
+## To deploy my project:
+
+## **To clone my repository in github**
+
+# **Credits**
+
+## **Content**
+
+**The text:**
+- I have written all the web site text, my wife helped me to fixed them. (Thanks to Yamile Simes Again for help me always)
+
+**The form:** 
+- part of the code was utilized from the official bootstrap website and the code institute learning page
+_[bootstrap form address](https://getbootstrap.com/docs/5.0/forms/overview/)_.
+
+**The icons:** 
+- the icons were used from the font awesome website; The link was provided by the code institute learning page
+_[font awesome web site](https://fontawesome.com/)_.
+
+**The fonts:**  
+- From google fonts, The link was provided by the code institute learning page
+
+**Navmenu (desktop):**
+- From bootstrap template version 
+_[bootstrap template](https://startbootstrap.com/theme/clean-blog)_.
+
+**Navmenu (mobile):** 
+- Same bootstrap template version
+
+**Carousel** 
+- From bootstrap web page
+_[bootstrap](https://getbootstrap.com/docs/5.0/components/progress/)_.
+
+**Style** 
+- From bootstrap web page
+_[bootstrap](https://getbootstrap.com/docs/5.0/components/progress/)_.
+
+**Information (company tools):** 
+- From Alfaforni
+_[Alfaforni](https://alfaforni.com/)_.
+
+**About us (company tools):** 
+- From Alfaforni
+_[Alfaforni](https://alfaforni.com/)_.
+
+## **Media**
+
+**Background**: _[forneria oliva](https://forneriaoliva.com.br/menuitems/napolitana/)_.
+
+**Colors**: 
+- the colors of the entirely website was taken from _[canvas](https://www.canva.com)_.
+
+**Videos**: 
+- Edited with Resolve. 
+- Recorded with Action.
+
+**Gif**
+- Edited and Converted with onlineconverter _[online converter](https://www.onlineconverter.com/)_.
