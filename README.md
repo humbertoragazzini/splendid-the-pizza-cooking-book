@@ -1,4 +1,8 @@
+# SPLENDID PIZZA PROJECT #
 
+Welcome to Splendid pizza , a space created by pizza lovers for pizza lovers, where you can interact in the best way, sharing your own recipe creations, learning new ones, or modifying them giving it a taste of every corner of the world, just for the love we have for this delicious food! You will have the space to name your creation and put all those things necessary to prepare it to perfection. And it is not only about recipes but you will also have the possibility of being aware of the latest news of those essential tools to achieve a perfect pizza with a catalog of products that will help you reach perfection in your creations. Welcome to this new way of sharing the love for the pizza! enjoy it!
+
+- Web site - _[splendid](http://splendid-the-pizza-book.herokuapp.com/home_page)_.
 
 # UX: #
 
@@ -300,7 +304,7 @@ The site it has made to be responsive for all devices:
 * Home:
     - Tested:
         1) Navbar (all links tested).
-            - bug in navbar (possible problem with navbar spacer only in chrome when admin)
+            - bug in navbar (possible problem with navbar spacer only in chrome when resolution go below 1400px width)
         2) All buttons: position, size, all correct.
         3) Carousel working
 
