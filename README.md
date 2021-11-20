@@ -101,45 +101,203 @@ _Live Wireframes to try:_
 _Links of all the individual wireframes:_
 
 Home page:
-- [Home Desktop View](.png)
-- [Home Mobile View](.png)
-- [Home Tablet Landscape View](.png)
-- [Home Tablet Portrait View](.png)
+- [Home Desktop View](/README-FILES/images/wireframes/desktop/home-desktop.jpg)
+- [Home Mobile View](/README-FILES/images/wireframes/mobile/home-mobile.jpg)
 
 Recipes page:
-- [Recipes page Desktop View](.png)
-- [Recipes page Mobile View](.png)
+- [Recipes page Desktop View](/README-FILES/images/wireframes/desktop/recipes-desktop.jpg)
+- [Recipes page Mobile View](/README-FILES/images/wireframes/mobile/recipes-mobile.jpg)
 
-Recipes page:
-- [Add Recipes page Desktop View](.png)
-- [Add Recipes page Mobile View](.png)
-
-About Us page:
-- [About Us Desktop View](.png)
-- [About Us Mobile View](.png)
-- [About Us Tablet Landscape View](.png)
-- [About Us Tablet Portrait View](.png)
+Recipes View page:
+- [Add Recipes page Desktop View](/README-FILES/images/wireframes/desktop/recipe-view-desktop.jpg)
+- [Add Recipes page Mobile View](/README-FILES/images/wireframes/mobile/recipes-view-mobile.jpg)
 
 Profile (User) page:
-- [Contact Desktop View](.png)
-- [Contact Mobile View](.png)
-- [Contact Tablet Landscape View](.png)
-- [Contact Tablet Portrait View](.png)
+- [Contact Desktop View](/README-FILES/images/wireframes/desktop/recipe-manager-desktop.jpg)
+- [Contact Mobile View](/README-FILES/images/wireframes/mobile/recipe-manager-mobile.jpg)
 
 Profile (ADMIN) page:
-- [Profile (ADMIN) Desktop View](.png)
-- [Profile (ADMIN) Mobile View](.png)
-
-Profile (ADMIN) page:
-- [Profile adds (ADMIN) Desktop View](.png)
-- [Profile adds (ADMIN) Mobile View](.png)
+- [Profile adds (ADMIN) Desktop View](/README-FILES/images/wireframes/desktop/admin-panel-ads-adder-modifier-desktop.jpg)
+- [Profile adds (ADMIN) Mobile View](/README-FILES/images/wireframes/mobile/admin-panel-ads-modifier-mobile.jpg)
+- [Profile adds edit(ADMIN) Desktop View](/README-FILES/images/wireframes/desktop/admin-panel-ads-desktop.jpg)
+- [Profile adds edit(ADMIN) Mobile View](/README-FILES/images/wireframes/mobile/admin-panel-ads-mobile.jpg)
+- [Profile panel mod(ADMIN) Desktop View](/README-FILES/images/wireframes/desktop/admin-panel-desktop.jpg)
+- [Profile panel mod(ADMIN) Mobile View](/README-FILES/images/wireframes/mobile/admin-panel-mobile.jpg)
 
 SignUp page:
-- [SignUp page Desktop View](.png)
-- [SignUp page Mobile View](.png)
+- [SignUp page Desktop View](/README-FILES/images/wireframes/desktop/signup-desktop.jpg)
+- [SignUp page Mobile View](/README-FILES/images/wireframes/mobile/signup-mobile.jpg)
 
 Login page:
-- [Login page Desktop View](.png)
-- [Login page Mobile View](.png)
+- [Login page Desktop View](/README-FILES/images/wireframes/desktop/login-desktop.jpg)
+- [Login page Mobile View](/README-FILES/images/wireframes/mobile/login-mobile.jpg)
+
+## **Surface**
+
+In this section i start looking for a good palet color, this color must to be in conjuntion with the pizza themes 
+
+Transmit the love for the pizzas is the most important thing, plus we need to show adds to make the products appear in the website.
+
+Before start coding the index, I did a research about what are the most common mobile and pc resolution around the world.
+
+The most common mobile resolution is:
+
+Resolution | Mobile percentage
+------------ | -------------
+360x640  | 10.77%
+414x896 | 7.37%
+360x780 | 5.9%
+375x667 | 5.56%
+360x800 | 5.52% 
+360x760 | 5.15% 
+
+Data taken from _[statcounter](https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide)_
+
+For desktop screen resolution the numbers are different
+
+Resolution | Desktop porcentage
+------------ | -------------
+1920x1080  | 20.99%
+1366x768 | 20.23%
+1536x864 | 9.72%
+1440x900 | 6.23%
+1280x720 | 5.45%
+1600x900 | 3.47%
+
+Between the 1080px and 768px resolution we have almost the 50% of the users, if we add 768px, 864px and 900p we have more than 60% of the users.
+
+### *Navbar**
+
+The main navbar change, its not the same always, so we have:
+
+- The navbar when the user is not login:
+
+- The navbar when the user is login:
+
+- The navbar when the user is login as a administrator:
+
+
+### **Middle Section**
+
+The middle section depending of the template rendered are:
+
+- Home page with some nice carousel made with bootstrap inviting the user to visit the recipes section:
+
+- The recipe section where the user can filter the recipes and view all the avaibles recipes loadeds in the db:
+
+- The login section:
+
+- The register section:
+
+- The profile section where the user can add recipes, delete and edit it.
+
+- The admin panel (for admin users):
+
+- The add offer, remove offer, remove user. Add, delete and edit recipes section:
+
+- Image of the completed web site:
+    
+    
+    ![The full web gif]()
+
+### **The footer**
+
+The footer is made with the social media in mind, but in a really minimalistic way:
+
+![footer gif](.gif)
+
+# **Testing**
+
+## **Responsive**
+    
+The site it has made to be responsive for all devices:
+    
+* Image of the mobile web site: 
+   
+   
+    ![The full web gif](.gif)
+    
+* Image to show the responsive design in the web site: 
+   
+   
+    ![The full web gif](.gif)
+
+## **Validators**
+
+* I did the validation for every single page, this are the result:
+    
+    - Home validation: 
+    
+    ![home validation](README-FILES/images/validators/home-page.png)
+
+    - Recipes validation: 
+    
+    ![Recipes validation](README-FILES/images/validators/recipe-page.png)
+
+    - About us validation: 
+    
+    ![home validation](README-FILES/images/validators/about-us.png)
+
+    - Add recipe (first step) validation: 
+    
+    ![Add recipe First validation](README-FILES/images/validators/add-recipe-first-page.png)
+
+    - Add recipe second page validation: 
+    
+    ![Add recipe second page validation](README-FILES/images/validators/add-recipe-second-step.png)
+
+    - Admin panel validation: 
+    
+    ![Admin panel validation](README-FILES/images/validators/admin-panel.png)
+
+    - Edit recipe validation: 
+    
+    ![Edit recipe validation](README-FILES/images/validators/edit-recipe.png)
+
+    - Login page validation: 
+    
+    ![Login page validation](README-FILES/images/validators/login-page.png)
+
+    - Offer adder validation: 
+    
+    ![Offer adder validation](README-FILES/images/validators/offer-adder.png)
+
+    - Offer remover validation: 
+    
+    ![Offer remover validation](README-FILES/images/validators/offer-remover.png)
+
+    - Profile admin validation: 
+    
+    ![Profile admin validation](README-FILES/images/validators/profile-admin.png)
+
+    - Register page validation: 
+    
+    ![Register page validation](README-FILES/images/validators/register-page.png)
+
+    - Remover user panel validation: 
+    
+    ![Remover user panel validation](README-FILES/images/validators/remover-user-panel.png)
+
+
+* PIP8 validation
+
+    - PIP8 result:
+
+    ![app.py validation](README-FILES/images/validators/py/py-check.png)
+
+
+
+* CSS validation
+
+    -Css validation result:
+
+    ![style.css validation](README-FILES/images/validators/css/css-style-validator.png)
+
+
+* JSHint validation
+
+    -JS validation result:
+
+    ![js validation](README-FILES/images/validators/js/JSHint.png)
 
 	 

@@ -1,6 +1,5 @@
 
 var locker = document.getElementsByClassName("add-space");
-var whatsapp = document.getElementById("whatsapp");
 $('.toast').toast().show();
 
 function closeToast(id){
