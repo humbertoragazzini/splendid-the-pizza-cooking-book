@@ -115,10 +115,10 @@ Recipes page:
 - [Add Recipes page Mobile View](.png)
 
 About Us page:
-- [About Me Desktop View](.png)
-- [About Me Mobile View](.png)
-- [About Me Tablet Landscape View](.png)
-- [About Me Tablet Portrait View](.png)
+- [About Us Desktop View](.png)
+- [About Us Mobile View](.png)
+- [About Us Tablet Landscape View](.png)
+- [About Us Tablet Portrait View](.png)
 
 Profile (User) page:
 - [Contact Desktop View](.png)
