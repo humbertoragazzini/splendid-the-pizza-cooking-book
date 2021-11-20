@@ -228,55 +228,55 @@ The site it has made to be responsive for all devices:
     
     - Home validation: 
     
-    ![home validation](README-FILES/images/validators/home-page.png)
+    ![home validation](README-FILES/images/validators/html/home-page.png)
 
     - Recipes validation: 
     
-    ![Recipes validation](README-FILES/images/validators/recipe-page.png)
+    ![Recipes validation](README-FILES/images/validators/html/recipe-page.png)
 
     - About us validation: 
     
-    ![home validation](README-FILES/images/validators/about-us.png)
+    ![home validation](README-FILES/images/validators/html/about-us.png)
 
     - Add recipe (first step) validation: 
     
-    ![Add recipe First validation](README-FILES/images/validators/add-recipe-first-page.png)
+    ![Add recipe First validation](README-FILES/images/validators/html/add-recipe-first-page.png)
 
     - Add recipe second page validation: 
     
-    ![Add recipe second page validation](README-FILES/images/validators/add-recipe-second-step.png)
+    ![Add recipe second page validation](README-FILES/images/validators/html/add-recipe-second-step.png)
 
     - Admin panel validation: 
     
-    ![Admin panel validation](README-FILES/images/validators/admin-panel.png)
+    ![Admin panel validation](README-FILES/images/validators/html/admin-panel.png)
 
     - Edit recipe validation: 
     
-    ![Edit recipe validation](README-FILES/images/validators/edit-recipe.png)
+    ![Edit recipe validation](README-FILES/images/validators/html/edit-recipe.png)
 
     - Login page validation: 
     
-    ![Login page validation](README-FILES/images/validators/login-page.png)
+    ![Login page validation](README-FILES/images/validators/html/login-page.png)
 
     - Offer adder validation: 
     
-    ![Offer adder validation](README-FILES/images/validators/offer-adder.png)
+    ![Offer adder validation](README-FILES/images/validators/html/offer-adder.png)
 
     - Offer remover validation: 
     
-    ![Offer remover validation](README-FILES/images/validators/offer-remover.png)
+    ![Offer remover validation](README-FILES/images/validators/html/offer-remover.png)
 
     - Profile admin validation: 
     
-    ![Profile admin validation](README-FILES/images/validators/profile-admin.png)
+    ![Profile admin validation](README-FILES/images/validators/html/profile-admin.png)
 
     - Register page validation: 
     
-    ![Register page validation](README-FILES/images/validators/register-page.png)
+    ![Register page validation](README-FILES/images/validators/html/register-page.png)
 
     - Remover user panel validation: 
     
-    ![Remover user panel validation](README-FILES/images/validators/remover-user-panel.png)
+    ![Remover user panel validation](README-FILES/images/validators/html/remover-user-panel.png)
 
 
 * PIP8 validation
