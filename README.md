@@ -404,7 +404,7 @@ To clone de repository follow this steps:
 
 2. b) After install gitbash in the command prompt select the path where you prefer to save the files.
 
-2. c) Execute the command in gitbash: git clone https://github.com/humbertoragazzini/splendid-the-pizza-coocking-book.git
+2. c) Execute the command in gitbash: git clone https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book.git
 
 ## To deploy my project follow this:
 
